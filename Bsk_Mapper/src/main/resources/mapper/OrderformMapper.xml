@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.li.bsk.mapper.OrderformMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.li.bsk.entity.Orderform">
+		<id column="order_id" property="orderId" />
+		<result column="order_name" property="orderName" />
+		<result column="addr_id" property="addrId" />
+		<result column="goods_id" property="goodsId" />
+		<result column="goods_num" property="goodsNum" />
+		<result column="goods_details" property="goodsDetails" />
+		<result column="order_price" property="orderPrice" />
+		<result column="order_delivetime" property="orderDelivetime" />
+		<result column="order_info" property="orderInfo" />
+	</resultMap>
+
+</mapper>

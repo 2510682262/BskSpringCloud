@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.li.bsk.mapper.GoodsClassifyDetailsMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.li.bsk.entity.GoodsClassifyDetails">
+		<id column="details_id" property="detailsId" />
+		<result column="details_size" property="detailsSize" />
+		<result column="details_person" property="detailsPerson" />
+		<result column="details_tableware" property="detailsTableware" />
+		<result column="details_time" property="detailsTime" />
+		<result column="details_price" property="detailsPrice" />
+		<result column="details_name" property="detailsName" />
+	</resultMap>
+
+</mapper>
