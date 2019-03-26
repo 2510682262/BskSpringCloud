@@ -17,7 +17,7 @@ import java.io.Serializable;
  * @since 2019-03-25
  */
 @TableName("user")
-public class User extends Model<User> {
+public class User extends Model<User> implements Serializable{
 
     private static final long serialVersionUID = 1L;
 

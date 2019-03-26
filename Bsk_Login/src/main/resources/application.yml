@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: lilogin
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/bestcake?serverTimezone=UTC
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  #注册中心的地址
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+server:
+  port: 8084

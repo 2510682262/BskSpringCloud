@@ -1,8 +1,8 @@
-package com.li.bsk.api.controller;
+package com.li.bsk.provider.user.controller;
 
-import com.li.bsk.api.provider.UserAddrProvider;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserAddr;
+import com.li.bsk.provider.user.provider.AddrProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,33 +10,34 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserAddrController {
+public class AddrController {
 
     @Autowired
-    private UserAddrProvider userAddrProvider;
+    private AddrProvider addrProvider;
 
     @PostMapping("userAddr/addUserAddr.do")
     public ResultVo addAddr(UserAddr userAddr){
-        return userAddrProvider.addAddr (userAddr);
+        return addrProvider.addAddr (userAddr);
     }
 
     @GetMapping("userAddr/findByUserId.do")
-    public ResultVo findByUserId(int id){
-        return userAddrProvider.findByUserId (id);
-    }
+    public ResultVo findByUserId(int id){ return addrProvider.findByUserId (id); }
 
     @GetMapping("userAddr/findByAddrId.do")
     public ResultVo findByAddrId(int id){
-        return userAddrProvider.findByAddrId (id);
+        return addrProvider.findByAddrId (id);
     }
 
     @PutMapping("userAddr/updateAddr.do")
     public ResultVo updateAddr(UserAddr userAddr){
-        return userAddrProvider.updateAddr (userAddr);
+        return addrProvider.updateAddr (userAddr);
     }
 
     @PostMapping("userAddr/delAddrByAddrId.do")
     public ResultVo delAddrByAddrId(int id){
-        return userAddrProvider.delAddrByAddrId (id);
+        return addrProvider.delAddrByAddrId (id);
     }
+
+
+
 }

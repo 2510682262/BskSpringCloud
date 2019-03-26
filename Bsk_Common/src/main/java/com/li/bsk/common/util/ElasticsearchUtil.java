@@ -8,10 +8,7 @@ import org.elasticsearch.transport.client.PreBuiltTransportClient;
 
 import java.net.InetSocketAddress;
 
-/**
- *@Author feri
- *@Date Created in 2019/3/25 13:52
- */
+
 public class ElasticsearchUtil {
     private TransportClient client;
     public ElasticsearchUtil(String clustername,String host,int port){

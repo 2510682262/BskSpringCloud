@@ -9,3 +9,4 @@ spring:
   application:
     name: lxapi
   #注册中心的地址
+

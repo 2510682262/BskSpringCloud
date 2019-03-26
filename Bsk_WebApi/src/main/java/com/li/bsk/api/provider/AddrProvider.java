@@ -2,7 +2,6 @@ package com.li.bsk.api.provider;
 
 import com.li.bsk.common.util.ResultUtil;
 import com.li.bsk.common.vo.ResultVo;
-import com.li.bsk.entity.User;
 import com.li.bsk.entity.UserAddr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -16,14 +15,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class UserAddrProvider {
+public class AddrProvider {
 
     @Autowired
     private RestTemplate restTemplate;
 
     public ResultVo addAddr(UserAddr userAddr){
 
-        Map<String, Object> param = new HashMap<> ();
+        /*Map<String, Object> param = new HashMap<> ();
         param.put ("addrPhone",userAddr.getAddrPhone ());
         param.put ("addrShipping",userAddr.getAddrShipping ());
         param.put ("addrShippinginfo",userAddr.getAddrShippinginfo ());
@@ -32,9 +31,9 @@ public class UserAddrProvider {
         param.put ("userId",userAddr.getUserId ());
         HttpHeaders httpHeaders = new HttpHeaders ();
         httpHeaders.setContentType (MediaType.APPLICATION_JSON_UTF8);
-        HttpEntity<Map<String, Object>> httpEntity = new HttpEntity<> (param, httpHeaders);
+        HttpEntity<Map<String, Object>> httpEntity = new HttpEntity<> (param, httpHeaders);*/
 
-        return restTemplate.postForObject ("http://liprovideruser/userAddr/addUserAddr.do", httpEntity, ResultVo.class);
+        return restTemplate.postForObject ("http://liprovideruser/userAddr/addUserAddr.do", userAddr, ResultVo.class);
 
     }
 
@@ -63,19 +62,20 @@ public class UserAddrProvider {
         httpHeaders.setContentType (MediaType.APPLICATION_JSON_UTF8);
         HttpEntity<Map<String, Object>> httpEntity = new HttpEntity<> (param, httpHeaders);
 
-        return restTemplate.postForObject ("http://liprovideruser/userAddr/updateAddr.do", httpEntity, ResultVo.class);
-    }
-
-    public ResultVo delAddrByAddrId(int id){
-
         try {
-            restTemplate.delete ("http://liprovideruser/userAddr/delAddrByAddrId.do?id=" + id);
+            restTemplate.put ("http://liprovideruser/userAddr/updateAddr.do",httpEntity);
             return ResultUtil.exec (true,"OK",null);
         } catch (RestClientException e) {
             e.printStackTrace ();
             return ResultUtil.exec (false,"ERROR",null);
-        }
 
+        }
+//        return restTemplate.postForObject ("http://liprovideruser/userAddr/updateAddr.do", httpEntity, ResultVo.class);
+    }
+
+    public ResultVo delAddrByAddrId(int id){
+
+        return restTemplate.getForObject ("http://liprovideruser/userAddr/delAddrByAddrId.do?id=" + id, ResultVo.class);
     }
 
 }

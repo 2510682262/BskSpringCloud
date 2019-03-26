@@ -4,12 +4,12 @@ import com.li.bsk.common.util.ResultUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserAddr;
 import com.li.bsk.mapper.UserAddrMapper;
-import com.li.bsk.service.user.UserAddrService;
+import com.li.bsk.service.user.AddrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserAddrProvider implements UserAddrService {
+public class AddrProvider implements AddrService {
 
     @Autowired
     private UserAddrMapper userAddrMapper;

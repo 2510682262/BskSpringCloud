@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -20,14 +23,20 @@ public class UserProvider {
 
     public ResultVo register(User user){
 
-        Map<String, Object> param = new HashMap<> ();
+        /*Map<String, Object> param = new HashMap<> ();
         param.put ("userPhone", user.getUserPhone ());
         param.put ("userPassword", user.getUserPassword ());
         HttpHeaders httpHeaders = new HttpHeaders ();
         httpHeaders.setContentType (MediaType.APPLICATION_JSON_UTF8);
-        HttpEntity<Map<String, Object>> httpEntity = new HttpEntity<> (param, httpHeaders);
+        HttpEntity<Map<String, Object>> httpEntity = new HttpEntity<> (param);*/
 
-        return restTemplate.postForObject ("http://liprovideruser/user/userAdd.do", httpEntity, ResultVo.class);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+        MultiValueMap<String, String> map= new LinkedMultiValueMap<String, String> ();
+        map.add("userPhone",user.getUserPhone ());
+        map.add ("userPassword",user.getUserPassword ());
+        HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
+        return restTemplate.postForObject ("http://liprovideruser/user/userAdd.do", request, ResultVo.class);
 
     }
 

@@ -3,7 +3,7 @@ package com.li.bsk.service.user;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserAddr;
 
-public interface UserAddrService {
+public interface AddrService {
 
     ResultVo addAddr(UserAddr userAddr);
 
