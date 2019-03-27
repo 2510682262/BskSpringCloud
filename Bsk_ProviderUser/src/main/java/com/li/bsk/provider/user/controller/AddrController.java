@@ -4,10 +4,7 @@ import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserAddr;
 import com.li.bsk.provider.user.provider.AddrProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class AddrController {
@@ -16,7 +13,7 @@ public class AddrController {
     private AddrProvider addrProvider;
 
     @PostMapping("userAddr/addUserAddr.do")
-    public ResultVo addAddr(UserAddr userAddr){
+    public ResultVo addAddr(@RequestBody UserAddr userAddr){
         return addrProvider.addAddr (userAddr);
     }
 
@@ -29,13 +26,13 @@ public class AddrController {
     }
 
     @PutMapping("userAddr/updateAddr.do")
-    public ResultVo updateAddr(UserAddr userAddr){
-        return addrProvider.updateAddr (userAddr);
+    public void updateAddr(@RequestBody UserAddr userAddr){
+        addrProvider.updateAddr (userAddr);
     }
 
     @PostMapping("userAddr/delAddrByAddrId.do")
-    public ResultVo delAddrByAddrId(int id){
-        return addrProvider.delAddrByAddrId (id);
+    public void delAddrByAddrId(int id){
+        addrProvider.delAddrByAddrId (id);
     }
 
 

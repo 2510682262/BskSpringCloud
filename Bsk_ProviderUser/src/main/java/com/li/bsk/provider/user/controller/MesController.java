@@ -6,6 +6,7 @@ import com.li.bsk.provider.user.provider.MesProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,7 +16,7 @@ public class MesController {
     private MesProvider mesProvider;
 
     @PostMapping("userMes/addMes.do")
-    public ResultVo addMes(UserMessage userMessage){
+    public ResultVo addMes(@RequestBody UserMessage userMessage){
         return mesProvider.addMes (userMessage);
     }
 

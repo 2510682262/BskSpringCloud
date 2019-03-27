@@ -9,7 +9,7 @@ import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.Log;
 import com.li.bsk.entity.User;
-import com.li.bsk.common.config.SystemConst;
+import com.li.bsk.common.sysconst.SystemConst;
 import com.li.bsk.login.service.LoginService;
 import com.li.bsk.mapper.LogMapper;
 import com.li.bsk.mapper.UserMapper;
@@ -24,6 +24,7 @@ import java.util.Date;
  */
 @Service
 public class LoginProvider implements LoginService {
+
     @Autowired
     private JedisUtil jedisUtil;
     @Autowired

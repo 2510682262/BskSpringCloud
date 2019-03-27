@@ -1,6 +1,6 @@
 package com.li.bsk.login.config;
 
-import com.li.bsk.common.config.SystemConst;
+import com.li.bsk.common.sysconst.SystemConst;
 import com.li.bsk.common.util.JedisUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

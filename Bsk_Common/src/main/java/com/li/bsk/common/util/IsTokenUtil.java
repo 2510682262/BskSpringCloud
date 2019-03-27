@@ -1,6 +1,6 @@
 package com.li.bsk.common.util;
 
-import com.li.bsk.common.config.SystemConst;
+import com.li.bsk.common.sysconst.SystemConst;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

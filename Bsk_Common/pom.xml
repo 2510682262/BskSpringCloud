@@ -24,6 +24,11 @@
             <artifactId>elasticsearch-x-content</artifactId>
             <version>6.5.4</version>
         </dependency>
+        <dependency>
+            <groupId>com.li</groupId>
+            <artifactId>Bsk_Entity</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
 

@@ -14,8 +14,6 @@ public class JedisUtil {
     private JedisPool jedisPool;
     private Jedis jedis;
 
-
-
     public JedisUtil(String host, int port, String pass) {
         jedisPool=new JedisPool(host,port);
         jedis=jedisPool.getResource();

@@ -11,7 +11,7 @@ public interface AddrService {
 
     ResultVo findByAddrId(int id);
 
-    ResultVo updateAddr(UserAddr userAddr);
+    void updateAddr(UserAddr userAddr);
 
-    ResultVo delAddrByAddrId(int id);
+    void delAddrByAddrId(int id);
 }

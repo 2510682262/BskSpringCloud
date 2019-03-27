@@ -3,7 +3,7 @@ package com.li.bsk.login.controller;
 import com.li.bsk.common.util.IsTokenUtil;
 import com.li.bsk.common.util.ResultUtil;
 import com.li.bsk.common.vo.ResultVo;
-import com.li.bsk.common.config.SystemConst;
+import com.li.bsk.common.sysconst.SystemConst;
 import com.li.bsk.login.service.LoginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

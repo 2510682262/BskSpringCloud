@@ -20,9 +20,8 @@ public class LevProvider implements LevService {
     }
 
     @Override
-    public ResultVo updateLevel(UserLevel userLevel) {
+    public void updateLevel(UserLevel userLevel) {
         userLevel.setLevelExp (userLevel.getLevelExp () + 1);
         userLevelMapper.updateById (userLevel);
-        return ResultUtil.exec (true,"OK",null);
     }
 }

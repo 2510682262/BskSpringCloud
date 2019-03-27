@@ -7,6 +7,7 @@ import com.li.bsk.provider.user.provider.LevProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,8 +22,7 @@ public class LevelController {
     }
 
     @PostMapping("userLev/updateLevel.do")
-    public ResultVo updateLevel(UserLevel userLevel){
+    public void updateLevel(@RequestBody UserLevel userLevel){
         levProvider.updateLevel (userLevel);
-        return ResultUtil.exec (true,"OK",null);
     }
 }

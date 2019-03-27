@@ -33,18 +33,15 @@ public class AddrProvider implements AddrService {
     }
 
     @Override
-    public ResultVo updateAddr(UserAddr userAddr) {
-        int i = userAddrMapper.updateById (userAddr);
-        return ResultUtil.exec (i > 0,"OK",null);
+    public void updateAddr(UserAddr userAddr) {
+        userAddrMapper.updateById (userAddr);
     }
 
     @Override
-    public ResultVo delAddrByAddrId(int id) {
+    public void delAddrByAddrId(int id) {
         UserAddr userAddr = userAddrMapper.selectById (id);
         if (userAddr != null){
             userAddrMapper.deleteById (id);
-            return ResultUtil.exec (true,"OK",null);
         }
-        return ResultUtil.exec (false,"要删除的地址不存在",null);
     }
 }

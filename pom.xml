@@ -12,6 +12,8 @@
         <module>Bsk_Common</module>
         <module>Bsk_WebApi</module>
         <module>Bsk_Login</module>
+        <module>Bsk_ProviderGoods</module>
+        <module>Bsk_WebGoods</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

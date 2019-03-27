@@ -7,5 +7,5 @@ public interface LevService {
 
     ResultVo findByLevId(int id);
 
-    ResultVo updateLevel(UserLevel userLevel);
+    void updateLevel(UserLevel userLevel);
 }
