@@ -9,4 +9,8 @@
 		<result column="goods_id" property="goodsId" />
 	</resultMap>
 
+	<select id="selectByGoodsId" resultMap="BaseResultMap">
+		select * from goods_img where goods_id = #{id}
+	</select>
+
 </mapper>

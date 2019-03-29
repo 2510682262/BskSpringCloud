@@ -1,10 +1,12 @@
 package com.li.bsk.provider.goods.provider;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.li.bsk.common.util.ResultUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.common.vo.VGoods;
 import com.li.bsk.entity.Goods;
 import com.li.bsk.entity.GoodsImg;
+import com.li.bsk.mapper.GoodsClassifyDetailsMapper;
 import com.li.bsk.mapper.GoodsImgMapper;
 import com.li.bsk.mapper.GoodsMapper;
 import com.li.bsk.service.goods.GoodsService;
@@ -20,18 +22,21 @@ public class GoodsProvider implements GoodsService {
 
     @Autowired
     private GoodsMapper goodsMapper;
-
     @Autowired
     private GoodsImgMapper goodsImgMapper;
+    @Autowired
+    private GoodsClassifyDetailsMapper goodsClassifyDetailsMapper;
 
     @Override
     public ResultVo findByGoodsId(int id) {
-        VGoods vGoods = null;
+
+        VGoods vGoods = new VGoods ();
         Goods goods = goodsMapper.selectById (id);
-        List<GoodsImg> goodsImgs = goodsImgMapper.selectByGoodsId (id);
+        Map<String,Object> map = new HashMap<> ();
+        map.put ("goods_id",id);
+        List<GoodsImg> goodsImgs = goodsImgMapper.selectList (new QueryWrapper<GoodsImg> ().allEq ((String, Object) -> String.equals ("goods_id"), map));
         vGoods.setGoods (goods);
         vGoods.setGoodsImgs (goodsImgs);
-
         return ResultUtil.exec (true,"OK",vGoods);
     }
 
@@ -52,4 +57,5 @@ public class GoodsProvider implements GoodsService {
 
         ResultUtil.exec (goodsMapper.deleteById (id) > 0,"OK",null);
     }
+
 }

@@ -16,7 +16,6 @@ import java.util.List;
  */
 public interface GoodsImgMapper extends BaseMapper<GoodsImg> {
 
-    @Select ("select * from goods_img where goods_id = #{id}")
     List<GoodsImg> selectByGoodsId(int id);
 
 }

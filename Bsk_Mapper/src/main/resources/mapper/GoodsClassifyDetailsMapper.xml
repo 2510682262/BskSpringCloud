@@ -13,4 +13,11 @@
 		<result column="details_name" property="detailsName" />
 	</resultMap>
 
+	<select id="selectByGoodsId" resultMap="BaseResultMap">
+		select d.* from goods_classify c
+		INNER JOIN goods_classify_details d
+		on c.details_id = d.details_id
+		where c.goods_id = #{id}
+	</select>
+
 </mapper>

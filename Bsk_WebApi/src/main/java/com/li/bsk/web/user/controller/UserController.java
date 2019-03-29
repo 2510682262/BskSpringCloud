@@ -1,7 +1,9 @@
 package com.li.bsk.web.user.controller;
 
+import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.User;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +19,15 @@ public class UserController {
 
     @PostMapping("user/userAdd.do")
     @ApiOperation (value = "用户注册")
+    @HystrixCommand(commandKey = "userAdd")
     public ResultVo register(User user){
 
-        return restTemplate.postForObject ("http://liprovideruser/user/addUser.do",user,ResultVo.class);
+        return restTemplate.postForObject ("http://liprovideruser/user/userAdd.do",user,ResultVo.class);
     }
 
-    @GetMapping("user/user.do/{id}")
-    public ResultVo findUserById(@PathVariable int id){
+    @GetMapping("user/user.do")
+    public ResultVo findUserById(String token){
+        int id = TokenUtil.parseToken (token);
         return restTemplate.getForObject ("http://liprovideruser/user/user.do?id=" + id,
                 ResultVo.class);
     }

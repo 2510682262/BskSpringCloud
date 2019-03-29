@@ -13,4 +13,5 @@ import com.li.bsk.entity.GoodsClassifyDetails;
  */
 public interface GoodsClassifyDetailsMapper extends BaseMapper<GoodsClassifyDetails> {
 
+    GoodsClassifyDetails selectByGoodsId(int id);
 }

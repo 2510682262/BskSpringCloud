@@ -1,6 +1,7 @@
 package com.li.bsk.web.user.controller;
 
 import com.li.bsk.common.util.ResultUtil;
+import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserLevel;
 import io.swagger.annotations.Api;
@@ -21,7 +22,8 @@ public class LevelController {
 
     @GetMapping("userLev/findByLevId.do")
     @ApiOperation (value = "查询用户等级信息")
-    public ResultVo findByLevId(int id){
+    public ResultVo findByLevId(String token){
+        int id = TokenUtil.parseToken (token);
         return restTemplate.getForObject ("http://liprovideruser/userLev/findByLevId.do?id=" + id,ResultVo.class);
     }
 

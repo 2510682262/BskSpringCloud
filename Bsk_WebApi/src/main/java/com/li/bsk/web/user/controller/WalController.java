@@ -1,5 +1,6 @@
 package com.li.bsk.web.user.controller;
 
+import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,7 +19,8 @@ public class WalController {
 
     @GetMapping("userWal/findByWalId.do")
     @ApiOperation (value = "用户钱包信息")
-    public ResultVo findByWalId(int id){
+    public ResultVo findByWalId(String token){
+        int id = TokenUtil.parseToken (token);
         return restTemplate.getForObject ("http://liprovideruser/userWal/findByWalId.do?id=" + id,ResultVo.class);
     }
 }

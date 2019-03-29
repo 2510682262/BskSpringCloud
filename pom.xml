@@ -14,6 +14,9 @@
         <module>Bsk_Login</module>
         <module>Bsk_ProviderGoods</module>
         <module>Bsk_WebGoods</module>
+        <module>Bsk_SearchApi</module>
+        <module>Bsk_Quartz</module>
+        <module>Bsk_PayApi</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

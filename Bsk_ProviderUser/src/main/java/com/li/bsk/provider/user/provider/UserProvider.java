@@ -3,11 +3,10 @@ package com.li.bsk.provider.user.provider;
 import com.li.bsk.common.sysconst.SystemCon;
 import com.li.bsk.common.util.ResultUtil;
 import com.li.bsk.common.vo.ResultVo;
-import com.li.bsk.entity.Log;
-import com.li.bsk.entity.User;
-import com.li.bsk.mapper.LogMapper;
-import com.li.bsk.mapper.UserMapper;
+import com.li.bsk.entity.*;
+import com.li.bsk.mapper.*;
 import com.li.bsk.service.user.UserService;
+import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +17,14 @@ public class UserProvider implements UserService {
 
     @Autowired
     private UserMapper userMapper;
-
     @Autowired
     private LogMapper logMapper;
+    @Autowired
+    private UserLevelMapper userLevelMapper;
+    @Autowired
+    private UserWalletMapper userWalletMapper;
+    @Autowired
+    private UserMessageMapper userMessageMapper;
 
     @Override
     public ResultVo save(User user) {
@@ -36,6 +40,10 @@ public class UserProvider implements UserService {
             log.setLogType (SystemCon.STREAMLOGOP);
             // 差一个用户id
             logMapper.insert (log);
+            userLevelMapper.insert (new UserLevel ());
+            userMessageMapper.insert (new UserMessage ());
+            userWalletMapper.insert (new UserWallet ());
+
             return ResultUtil.exec (true,"OK",null);
         }
 

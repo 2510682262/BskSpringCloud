@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@Configuration
+//@Configuration
 public class WebConfigurer implements WebMvcConfigurer {
 
     @Autowired
@@ -16,7 +16,7 @@ public class WebConfigurer implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor (loginInterceptor).addPathPatterns ("/**").excludePathPatterns ("/user/userAdd.do","/index.html");
+        registry.addInterceptor (loginInterceptor).addPathPatterns ("/**").excludePathPatterns ("/index.html","/user/userAdd.do");
 
 
     }

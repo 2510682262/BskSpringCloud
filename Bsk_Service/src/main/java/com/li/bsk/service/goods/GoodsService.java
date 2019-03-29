@@ -12,4 +12,5 @@ public interface GoodsService {
     void updateGoods(Goods goods);
 
     void deleteByGoodsId(int id);
+
 }

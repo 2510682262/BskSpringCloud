@@ -1,5 +1,6 @@
 package com.li.bsk.web.user.controller;
 
+import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserMessage;
 import io.swagger.annotations.Api;
@@ -26,7 +27,8 @@ public class MesController {
 
     @GetMapping("userMes/findByMesId.do")
     @ApiOperation (value = "查找用户信息")
-    public ResultVo findByMesId(int id){
+    public ResultVo findByMesId(String token){
+        int id = TokenUtil.parseToken (token);
         return restTemplate.getForObject ("http://liprovideruser/userMes/findByMesId.do?id=" + id,
                 ResultVo.class);
     }
