@@ -5,10 +5,7 @@ import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserLevel;
 import com.li.bsk.provider.user.provider.LevProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class LevelController {
@@ -17,11 +14,11 @@ public class LevelController {
     private LevProvider levProvider;
 
     @GetMapping("userLev/findByLevId.do")
-    public ResultVo findByLevId(int id){
-        return ResultUtil.exec (true,"OK",levProvider.findByLevId (id));
+    public ResultVo findByLevId(String token){
+        return ResultUtil.exec (true,"OK",levProvider.findByLevId (token));
     }
 
-    @PostMapping("userLev/updateLevel.do")
+    @PutMapping("userLev/updateLevel.do")
     public void updateLevel(@RequestBody UserLevel userLevel){
         levProvider.updateLevel (userLevel);
     }

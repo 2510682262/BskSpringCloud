@@ -20,7 +20,6 @@ public class WalController {
     @GetMapping("userWal/findByWalId.do")
     @ApiOperation (value = "用户钱包信息")
     public ResultVo findByWalId(String token){
-        int id = TokenUtil.parseToken (token);
-        return restTemplate.getForObject ("http://liprovideruser/userWal/findByWalId.do?id=" + id,ResultVo.class);
+        return restTemplate.getForObject ("http://liprovideruser/userWal/findByWalId.do?token=" + token,ResultVo.class);
     }
 }

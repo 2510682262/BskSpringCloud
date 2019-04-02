@@ -1,6 +1,7 @@
 package com.li.bsk.provider.user.provider;
 
 import com.li.bsk.common.util.ResultUtil;
+import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserLevel;
 import com.li.bsk.mapper.UserLevelMapper;
@@ -15,13 +16,22 @@ public class LevProvider implements LevService {
     private UserLevelMapper userLevelMapper;
 
     @Override
-    public ResultVo findByLevId(int id) {
-        return ResultUtil.exec (true,"OK",userLevelMapper.selectById (id));
+    public ResultVo findByLevId(String token) {
+        return ResultUtil.exec (true,"OK",userLevelMapper.selectById (TokenUtil.parseToken (token)));
     }
 
     @Override
-    public void updateLevel(UserLevel userLevel) {
-        userLevel.setLevelExp (userLevel.getLevelExp () + 1);
-        userLevelMapper.updateById (userLevel);
+    public ResultVo updateLevel(UserLevel userLevel) {
+
+        UserLevel userLevel1 = userLevelMapper.selectById (userLevel.getLevelId ());
+        userLevel.setLevelExp (userLevel1.getLevelExp () + 1);
+        if (userLevel.getLevelExp () >= 10000){
+            userLevel.setLevelName ("蛋糕至尊");
+        } else if (userLevel.getLevelExp () > 5000){
+            userLevel.setLevelName ("蛋糕王者");
+        } if (userLevel.getLevelExp () > 1000){
+            userLevel.setLevelName ("热爱");
+        }
+        return ResultUtil.exec (userLevelMapper.updateById (userLevel) > 0,"OK",null);
     }
 }

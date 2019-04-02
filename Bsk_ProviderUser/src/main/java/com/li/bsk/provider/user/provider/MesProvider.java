@@ -1,6 +1,7 @@
 package com.li.bsk.provider.user.provider;
 
 import com.li.bsk.common.util.ResultUtil;
+import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserMessage;
 import com.li.bsk.mapper.UserMessageMapper;
@@ -28,7 +29,7 @@ public class MesProvider implements MessageService {
     }
 
     @Override
-    public ResultVo findByMesId(int id) {
-        return ResultUtil.exec (true,"OK",userMessageMapper.selectById (id));
+    public ResultVo findByMesId(String token) {
+        return ResultUtil.exec (true,"OK",userMessageMapper.selectById (TokenUtil.parseToken (token)));
     }
 }

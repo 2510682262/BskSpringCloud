@@ -1,6 +1,7 @@
 package com.li.bsk.provider.user.provider;
 
 import com.li.bsk.common.util.ResultUtil;
+import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.mapper.UserWalletMapper;
 import com.li.bsk.service.user.WalService;
@@ -14,7 +15,7 @@ public class WalProvider implements WalService {
     private UserWalletMapper userWalletMapper;
 
     @Override
-    public ResultVo findByWalId(int id) {
-        return ResultUtil.exec (true,"OK",userWalletMapper.selectById (id));
+    public ResultVo findByWalId(String token) {
+        return ResultUtil.exec (true,"OK",userWalletMapper.selectById (TokenUtil.parseToken (token)));
     }
 }

@@ -2,6 +2,7 @@ package com.li.bsk.entity;
 
 import java.math.BigDecimal;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -22,7 +23,7 @@ public class UserMessage extends Model<UserMessage> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("mes_id")
+    @TableId(value="mes_id", type= IdType.AUTO)
 	private Integer mesId;
 	@TableField("mes_nickname")
 	private String mesNickname;

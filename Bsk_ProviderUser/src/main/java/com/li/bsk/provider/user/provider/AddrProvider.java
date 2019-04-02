@@ -1,6 +1,7 @@
 package com.li.bsk.provider.user.provider;
 
 import com.li.bsk.common.util.ResultUtil;
+import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.UserAddr;
 import com.li.bsk.mapper.UserAddrMapper;
@@ -15,16 +16,17 @@ public class AddrProvider implements AddrService {
     private UserAddrMapper userAddrMapper;
 
     @Override
-    public ResultVo addAddr(UserAddr userAddr) {
+    public ResultVo addAddr(UserAddr userAddr, String token) {
 
-        int insert = userAddrMapper.insert (userAddr);
-        return ResultUtil.exec (insert > 0,"OK", null);
+
+        userAddr.setUserId (TokenUtil.parseToken (token));
+        return ResultUtil.exec (userAddrMapper.insert (userAddr) > 0,"OK", null);
     }
 
     @Override
-    public ResultVo findByUserId(int id) {
+    public ResultVo findByUserId(String token) {
 
-        return ResultUtil.exec (true,"OK",userAddrMapper.findByUserId (id));
+        return ResultUtil.exec (true,"OK",userAddrMapper.findByUserId (TokenUtil.parseToken (token)));
     }
 
     @Override

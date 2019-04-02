@@ -8,16 +8,7 @@ server:
 spring:
   application:
     name: liapi
-  #注册中心的地址
-hystrix:
-  command:
-    userAdd:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 50000
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 15000
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true

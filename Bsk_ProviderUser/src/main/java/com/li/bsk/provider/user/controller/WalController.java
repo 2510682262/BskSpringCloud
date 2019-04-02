@@ -13,7 +13,7 @@ public class WalController {
     private WalProvider walProvider;
 
     @GetMapping("userWal/findByWalId.do")
-    public ResultVo findByWalId(int id){
-        return walProvider.findByWalId (id);
+    public ResultVo findByWalId(String token){
+        return walProvider.findByWalId (token);
     }
 }

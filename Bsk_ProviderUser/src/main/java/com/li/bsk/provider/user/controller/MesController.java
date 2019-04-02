@@ -21,8 +21,8 @@ public class MesController {
     }
 
     @GetMapping("userMes/findByMesId.do")
-    public ResultVo findByMesId(int id){
-        return mesProvider.findByMesId (id);
+    public ResultVo findByMesId(String token){
+        return mesProvider.findByMesId (token);
     }
 
 }

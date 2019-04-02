@@ -7,7 +7,7 @@ public interface UserService {
 
     ResultVo save(User user);
 
-    ResultVo queryById(int id);
+    ResultVo queryById(String token);
 
 
 }

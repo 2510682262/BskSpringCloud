@@ -21,24 +21,20 @@ public class AddrController {
     @PostMapping("userAddr/addUserAddr.do")
     @ApiOperation (value = "新增收货地址")
     public ResultVo addAddr(UserAddr userAddr, String token){
-
-        int id = TokenUtil.parseToken (token);
-        userAddr.setUserId (id);
-        return restTemplate.postForObject ("http://liprovideruser/userAddr/addUserAddr.do", userAddr, ResultVo.class);
+        return restTemplate.postForObject ("http://liprovideruser/userAddr/addUserAddr.do?token=" + token, userAddr, ResultVo.class);
     }
 
     @GetMapping("userAddr/findByUserId.do")
     @ApiOperation (value = "用户具体的收货地址")
     public ResultVo findByUserId(String token){
 
-        int id = TokenUtil.parseToken (token);
-        return restTemplate.getForObject ("http://liprovideruser/userAddr/findByUserId.do?id=" + id,
+        return restTemplate.getForObject ("http://liprovideruser/userAddr/findByUserId.do?token=" + token,
                 ResultVo.class);
     }
 
-    @GetMapping("userAddr/findByAddrId.do/{id}")
+    @GetMapping("userAddr/findByAddrId.do")
     @ApiOperation (value = "根据收货地址id查找收货地址")
-    public ResultVo findByAddrId(@PathVariable int id){
+    public ResultVo findByAddrId(int id){
         return restTemplate.getForObject ("http://liprovideruser/userAddr/findByAddrId.do?id=" + id,
                 ResultVo.class);
     }
@@ -55,9 +51,9 @@ public class AddrController {
         }
     }
 
-    @DeleteMapping("userAddr/delAddrByAddrId.do/{id}")
+    @DeleteMapping("userAddr/delAddrByAddrId.do")
     @ApiOperation (value = "删除收货地址")
-    public ResultVo delAddrByAddrId(@PathVariable int id){
+    public ResultVo delAddrByAddrId(int id){
         return restTemplate.getForObject ("http://liprovideruser/userAddr/delAddrByAddrId.do?id=" + id, ResultVo.class);
     }
 }

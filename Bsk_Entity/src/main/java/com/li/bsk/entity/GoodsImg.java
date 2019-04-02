@@ -17,7 +17,7 @@ import java.io.Serializable;
  * @since 2019-03-25
  */
 @TableName("goods_img")
-public class GoodsImg extends Model<GoodsImg> {
+public class GoodsImg extends Model<GoodsImg> implements Serializable{
 
     private static final long serialVersionUID = 1L;
 

@@ -7,5 +7,5 @@ public interface MessageService {
 
     ResultVo addMes(UserMessage userMessage);
 
-    ResultVo findByMesId(int id);
+    ResultVo findByMesId(String token);
 }

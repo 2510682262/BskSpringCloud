@@ -22,8 +22,8 @@ public class UserController {
     }
 
     @GetMapping("user/user.do")
-    public ResultVo queryBuId(int id){
-        return userService.queryById (id);
+    public ResultVo queryBuId(String token){
+        return userService.queryById (token);
     }
 
 }

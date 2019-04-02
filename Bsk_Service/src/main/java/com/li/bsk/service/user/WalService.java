@@ -4,5 +4,5 @@ import com.li.bsk.common.vo.ResultVo;
 
 public interface WalService {
 
-    ResultVo findByWalId(int id);
+    ResultVo findByWalId(String token);
 }

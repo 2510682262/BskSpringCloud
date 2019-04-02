@@ -17,6 +17,7 @@
         <module>Bsk_SearchApi</module>
         <module>Bsk_Quartz</module>
         <module>Bsk_PayApi</module>
+        <module>Bsk_MqSys</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

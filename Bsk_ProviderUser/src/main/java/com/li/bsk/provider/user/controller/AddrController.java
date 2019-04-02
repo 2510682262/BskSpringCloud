@@ -13,12 +13,12 @@ public class AddrController {
     private AddrProvider addrProvider;
 
     @PostMapping("userAddr/addUserAddr.do")
-    public ResultVo addAddr(@RequestBody UserAddr userAddr){
-        return addrProvider.addAddr (userAddr);
+    public ResultVo addAddr(@RequestBody UserAddr userAddr, String token){
+        return addrProvider.addAddr (userAddr,token);
     }
 
     @GetMapping("userAddr/findByUserId.do")
-    public ResultVo findByUserId(int id){ return addrProvider.findByUserId (id); }
+    public ResultVo findByUserId(String token){ return addrProvider.findByUserId (token); }
 
     @GetMapping("userAddr/findByAddrId.do")
     public ResultVo findByAddrId(int id){

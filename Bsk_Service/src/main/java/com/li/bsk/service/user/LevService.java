@@ -5,7 +5,7 @@ import com.li.bsk.entity.UserLevel;
 
 public interface LevService {
 
-    ResultVo findByLevId(int id);
+    ResultVo findByLevId(String token);
 
-    void updateLevel(UserLevel userLevel);
+    ResultVo updateLevel(UserLevel userLevel);
 }

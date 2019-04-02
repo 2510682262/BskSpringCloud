@@ -28,8 +28,7 @@ public class MesController {
     @GetMapping("userMes/findByMesId.do")
     @ApiOperation (value = "查找用户信息")
     public ResultVo findByMesId(String token){
-        int id = TokenUtil.parseToken (token);
-        return restTemplate.getForObject ("http://liprovideruser/userMes/findByMesId.do?id=" + id,
+        return restTemplate.getForObject ("http://liprovideruser/userMes/findByMesId.do?token=" + token,
                 ResultVo.class);
     }
 

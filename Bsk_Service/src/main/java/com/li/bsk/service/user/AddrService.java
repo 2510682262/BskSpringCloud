@@ -5,9 +5,9 @@ import com.li.bsk.entity.UserAddr;
 
 public interface AddrService {
 
-    ResultVo addAddr(UserAddr userAddr);
+    ResultVo addAddr(UserAddr userAddr, String token);
 
-    ResultVo findByUserId(int id);
+    ResultVo findByUserId(String token);
 
     ResultVo findByAddrId(int id);
 

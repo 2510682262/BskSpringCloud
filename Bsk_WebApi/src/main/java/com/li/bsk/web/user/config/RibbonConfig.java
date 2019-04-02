@@ -16,7 +16,11 @@ public class RibbonConfig {
     @Bean
     @LoadBalanced
     public RestTemplate creteRT(){
-        return new RestTemplate();
+        SimpleClientHttpRequestFactory simpleClientHttpRequestFactory = new SimpleClientHttpRequestFactory ();
+        simpleClientHttpRequestFactory.setConnectTimeout (60000);
+        simpleClientHttpRequestFactory.setReadTimeout (60000);
+
+        return new RestTemplate(simpleClientHttpRequestFactory);
     }
 
 }
