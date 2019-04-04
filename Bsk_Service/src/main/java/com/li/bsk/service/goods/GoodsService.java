@@ -18,4 +18,8 @@ public interface GoodsService {
 
     List<GoodsImg> selectByGoodsId(int id);
 
+    List<Goods> selectByGoodsType(int type);
+
+    List<Goods> selectByGoodsGenre(int genre);
+
 }

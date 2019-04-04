@@ -1,7 +1,7 @@
 package com.li.bsk.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.li.bsk.entity.Goods;
+import com.li.bsk.entity.Menu;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.li.bsk.entity.Goods;
  * @author li
  * @since 2019-04-04
  */
-public interface GoodsMapper extends BaseMapper<Goods> {
+public interface MenuMapper extends BaseMapper<Menu> {
 
 }

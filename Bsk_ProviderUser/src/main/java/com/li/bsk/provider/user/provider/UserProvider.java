@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.UUID;
 
 @Service
 public class UserProvider implements UserService {
@@ -54,7 +55,8 @@ public class UserProvider implements UserService {
             userLevelMapper.insert (userLevel);
 
             UserMessage userMessage = new UserMessage ();
-            userMessage.setMesLove (1);
+            String uuid = UUID.randomUUID().toString().replaceAll("-","");
+            userMessage.setMesName ("贝思客" + uuid);
             userMessageMapper.insert (userMessage);
 
             UserWallet userWallet = new UserWallet ();

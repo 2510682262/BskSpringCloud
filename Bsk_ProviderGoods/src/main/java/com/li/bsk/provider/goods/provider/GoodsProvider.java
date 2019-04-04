@@ -2,12 +2,9 @@ package com.li.bsk.provider.goods.provider;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.li.bsk.common.util.ResultUtil;
-import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
-import com.li.bsk.common.vo.VGoods;
 import com.li.bsk.entity.Goods;
 import com.li.bsk.entity.GoodsImg;
-import com.li.bsk.entity.User;
 import com.li.bsk.mapper.GoodsClassifyDetailsMapper;
 import com.li.bsk.mapper.GoodsImgMapper;
 import com.li.bsk.mapper.GoodsMapper;
@@ -15,9 +12,7 @@ import com.li.bsk.service.goods.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class GoodsProvider implements GoodsService {
@@ -59,6 +54,20 @@ public class GoodsProvider implements GoodsService {
         QueryWrapper<GoodsImg> queryWrapper = new QueryWrapper<GoodsImg> ().eq ("goods_id", id);
         List<GoodsImg> goodsImgs = goodsImgMapper.selectList (queryWrapper);
         return goodsImgs;
+    }
+
+    @Override
+    public List<Goods> selectByGoodsType(int type) {
+        QueryWrapper<Goods> queryWrapper = new QueryWrapper<> ();
+        queryWrapper.eq ("goods_type",type);
+        return goodsMapper.selectList (queryWrapper);
+    }
+
+    @Override
+    public List<Goods> selectByGoodsGenre(int genre) {
+        QueryWrapper<Goods> goodsQueryWrapper = new QueryWrapper<> ();
+        goodsQueryWrapper.eq ("goods_genre",genre);
+        return goodsMapper.selectList (goodsQueryWrapper);
     }
 
 }

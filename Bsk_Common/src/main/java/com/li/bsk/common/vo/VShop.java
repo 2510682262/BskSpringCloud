@@ -1,8 +1,5 @@
 package com.li.bsk.common.vo;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.li.bsk.entity.Goods;
-import com.li.bsk.entity.GoodsClassify;
 import com.li.bsk.entity.GoodsClassifyDetails;
 
 import java.math.BigDecimal;

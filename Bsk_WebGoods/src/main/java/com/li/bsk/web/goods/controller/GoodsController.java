@@ -3,11 +3,14 @@ package com.li.bsk.web.goods.controller;
 import com.li.bsk.common.util.ResultUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.common.vo.VGoods;
+import com.li.bsk.common.vo.VShop;
 import com.li.bsk.entity.Goods;
 import com.li.bsk.entity.GoodsImg;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import javafx.scene.chart.ValueAxis;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -69,5 +72,21 @@ public class GoodsController {
             e.printStackTrace ();
             return ResultUtil.exec (false,"ERROR",null);
         }
+    }
+
+    @GetMapping("goods/selectByGoodsType")
+    @ApiOperation (value = "根据商品类型找对应商品")
+    public ResultVo selectByGoodsType(int type){
+        Goods[] forObject = restTemplate.getForObject ("http://liprovidergoods/goods/delByGoodsId.do?type=" + type, Goods[].class);
+        List<Goods> goods = Arrays.asList (forObject);
+        return ResultUtil.exec (goods != null,"OK",goods);
+    }
+
+    @GetMapping("goods/selectByGoodsType")
+    @ApiOperation (value = "根据商品类型找对应商品")
+    public ResultVo selectByGoodsGenre(int genre){
+        Goods[] forObject = restTemplate.getForObject ("http://liprovidergoods/goods/delByGoodsId.do?genre=" + genre, Goods[].class);
+        List<Goods> goods = Arrays.asList (forObject);
+        return ResultUtil.exec (goods != null,"OK",goods);
     }
 }

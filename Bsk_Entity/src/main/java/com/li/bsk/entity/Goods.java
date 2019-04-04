@@ -1,12 +1,11 @@
 package com.li.bsk.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
-
+import com.baomidou.mybatisplus.enums.IdType;
 import java.math.BigDecimal;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -15,7 +14,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author li
- * @since 2019-03-25
+ * @since 2019-04-04
  */
 @TableName("goods")
 public class Goods extends Model<Goods> {
@@ -36,6 +35,8 @@ public class Goods extends Model<Goods> {
 	private BigDecimal goodsPrice;
 	@TableField("goods_salesvolume")
 	private Integer goodsSalesvolume;
+	@TableField("goods_genre")
+	private Integer goodsGenre;
 
 
 	public Integer getGoodsId() {
@@ -92,6 +93,14 @@ public class Goods extends Model<Goods> {
 
 	public void setGoodsSalesvolume(Integer goodsSalesvolume) {
 		this.goodsSalesvolume = goodsSalesvolume;
+	}
+
+	public Integer getGoodsGenre() {
+		return goodsGenre;
+	}
+
+	public void setGoodsGenre(Integer goodsGenre) {
+		this.goodsGenre = goodsGenre;
 	}
 
 	@Override
