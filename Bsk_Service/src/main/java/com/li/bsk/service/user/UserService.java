@@ -9,5 +9,9 @@ public interface UserService {
 
     ResultVo queryById(String token);
 
+    void backPassword(User user);
+
+    ResultVo verify(String phone);
+
 
 }

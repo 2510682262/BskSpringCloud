@@ -5,10 +5,7 @@ import com.li.bsk.entity.User;
 import com.li.bsk.provider.user.provider.UserProvider;
 import com.li.bsk.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -24,6 +21,16 @@ public class UserController {
     @GetMapping("user/user.do")
     public ResultVo queryBuId(String token){
         return userService.queryById (token);
+    }
+
+    @GetMapping("user/verify")
+    public ResultVo verify(String phone){
+        return userService.verify (phone);
+    }
+
+    @PutMapping("user/backPassword")
+    public void backPassword(@RequestBody User user){
+        userService.backPassword (user);
     }
 
 }

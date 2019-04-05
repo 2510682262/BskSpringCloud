@@ -74,4 +74,16 @@ public class UserProvider implements UserService {
 
         return ResultUtil.exec (userMapper.selectById (TokenUtil.parseToken (token)) != null,"OK",userMapper.selectById (TokenUtil.parseToken (token)));
     }
+
+
+    @Override
+    public ResultVo verify(String phone) {
+        User user_phone = userMapper.selectOne (new QueryWrapper<User> ().eq ("user_phone", phone));
+        return ResultUtil.exec (user_phone != null,"OK",null);
+    }
+
+    @Override
+    public void backPassword(User user) {
+        int user_phone = userMapper.update (user, new QueryWrapper<User> ().eq ("user_phone", user.getUserPhone ()));
+    }
 }

@@ -1,20 +1,19 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!doctype html>
+<html class="no-js">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>贝思客bestcake.com</title>
+    <title>我的订单- 贝思客bestcake.com</title>
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="https://res.bestcake.com/css/ui.min.css">
-    <link rel="stylesheet" href="https://res.bestcake.com/css/swiper.min.css">
     <meta name="description" content="贝思客bestcake.com-你身边的甜品专家，在线销售各种口味的生日蛋糕、巧克力蛋糕、芝士、乳酪蛋糕、慕斯蛋糕、鲜奶蛋糕、商务蛋糕,婚庆蛋糕,已在北京/上海/天津/杭州/苏州/无锡/宁波/南京/绍兴九大城市开通服务,让生日蛋糕延至日常">
     <meta name="Keywords" content="生日蛋糕,巧克力蛋糕,芝士,乳酪蛋糕,慕斯蛋糕,鲜奶蛋糕,商务蛋糕,婚庆蛋糕,提供健康、高品质蛋糕、时尚经典方形蛋糕,在线预订,配送到家,货到付款,极地牛乳,松露巧克力,柏林之恋,新天鹅堡情人">
     <!--网页标签图标-->
@@ -25,840 +24,690 @@
     <script src="/jslib/jquery.cookie.js" type="text/javascript"></script>
     <script src="/jslib/knockout-3.1.0.js" type="text/javascript"></script>
 
-    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">-->
-
     <style>
-        .top-new {
-            display: none;
-        }
-
-        .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-            background-image: url('https://res.bestcake.com/images/new-index/右.png');
-        }
-
-        .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-            background-image: url('https://res.bestcake.com/images/new-index/左.png');
-        }
-
-        body {
-            background: #fff;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
-        }
-
-        .bgw {
-            background-color: #fff;
-        }
-
-        .clrfloat:after, .index-one-left-tc:after, index-one-left-cake:after {
-            display: block;
-            content: '';
-            clear: both;
-        }
-
-
-
-        .img {
+        .member-center-main {
             width: 100%;
-            height: 100%;
+            height: auto;
+            margin-top: 40px;
         }
 
-        .curpoint {
-            cursor: pointer;
+        .member-center-content {
+            height: 524px;
+            margin-bottom: 120px;
         }
 
-
-        /*通用按钮样式*/
-        .index-buycake {
-            cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        .index-one:after {
-            content: '';
-            display: block;
-            clear: both;
-        }
-
-        .main {
-            width: 1200px;
+        .member-center {
+            max-width: 1100px;
+            width: 1100px !important;
             margin: 0 auto;
-        }
-        /*第一部分*/
-        .index-one {
+            height: auto;
         }
 
-        .index-one-left {
-            width: 228px;
-            height: 442px;
-            background: #26cad3;
+        .member-center-main-left {
+            width: 165px;
             float: left;
-            position: relative;
+            height: 441px;
         }
 
-        .index-one-right {
-            width: 972px;
-            height: 392px;
+        .member-center-main-right {
+            width: 933px;
             float: left;
-            position: relative;
+            border: 1px solid #f0f0f0;
+            height: auto;
+            margin-bottom: 118px;
+            min-height: 596px;
         }
 
-        .index-one-left-line {
-            margin: 16px 24px 16px 31px;
-            border-bottom: 1px dashed #fff;
-            height: 1px;
+        .main-right-title {
+            height: 20px;
+            margin: 24px 0px 0px 24px;
         }
 
-        .index-one-left-1 {
-            margin-top: 20px;
-        }
-
-        .index-one-left-2 {
-            margin-bottom: 14px;
-        }
-
-        .index-one-left-name {
-            margin-bottom: 2px;
-            color: #fff;
-            font-size: 16px;
-            line-height: 21px;
-            position: relative;
-            padding: 8.5px 24px 8.5px 31px;
-            cursor: pointer;
-        }
-
-        .index-one-left-name img {
-            margin-right: 11px;
-        }
-
-
-        .index-one-left-name:after {
-            display: block;
-            content: '';
-            position: absolute;
-            right: 26px;
-            top: 15px;
-            width: 7px;
-            height: 12px;
-            background: url(https://res.bestcake.com/images/new-index/jt.png) no-repeat center center;
-            background-size: 7px 12px;
-        }
-
-        .index-one-left-name.select {
-            background: #1fa6ad;
-        }
-
-        .index-one-left-name.select:after {
-            display: block;
-            content: '';
-            position: absolute;
-            right: 26px;
-            top: 15px;
-            width: 7px;
-            height: 12px;
-            background: url(https://res.bestcake.com/images/new-index/jts.png) no-repeat center center;
-            background-size: 7px 12px;
-        }
-
-        .index-one-left-name.select span {
-            color: #26cad3;
-        }
-
-
-        .index-one-left-tc {
-            position: absolute;
-            top: 0;
-            left: 228px;
-            background: #fff;
-            width: 972px;
-            height: 440px;
-            border-right: 2px solid #e0e0e0;
-            border-top: 2px solid #e0e0e0;
-            -moz-box-shadow: 5px 5px 11px #E0E0E0;
-            -webkit-box-shadow: 5px 5px 11px #E0E0E0;
-            box-shadow: 5px 5px 11px #E0E0E0;
-            z-index: 10;
-            display: none;
-        }
-
-        .index-one-left-cake {
+        .main-right-title div.title-name {
             float: left;
-            font-size: 0;
-            margin-left: 35px;
-            margin-top: 24px;
-            cursor: pointer;
-            width: 153px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-size: 14px;
+            font-weight: bolder;
+            height: 20px;
+            line-height: 20px;
         }
 
-        .index-one-left-cake:nth-child(5n+1) {
-            clear: both;
-        }
-
-        .index-one-left-cake img {
+        .title-line {
+            width: 2px;
+            height: 20px;
+            background-color: #01d5d8;
             margin-right: 10px;
             float: left;
         }
 
-        .index-one-left-cake div {
-            font-size: 16px;
-            line-height: 42px;
-            float: left;
-            max-width: 80px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
 
-        /*第二部分*/
-        .index-two {
-            margin-top: 14px;
-        }
-
-        .index-two:after {
-            content: '';
-            display: block;
-            clear: both;
-        }
-        .index-two-r1 {
-            float: left;
-            margin-right: 13px;
-            position: relative;
-        }
-        .index-two-r {
-            float: left;
-            margin-right: 13px;
-            position: relative;
-            -webkit-transition: -webkit-box-shadow .2s linear;
-            transition: all .2s linear;
-        }
-        .index-two-r:hover {
-            -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        .index-two-r img{
-            width:310px;
-            height:167px;
-            cursor:pointer;
-        }
-
-        .index-two-r:last-child {
-            margin-right: 0px;
-        }
-
-        .index-two-r0 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 229px;
-            height: 167px;
-        }
-
-
-
-        .index-two-r00 {
-            width: 114.5px;
-            height: 83.5px;
-            float: left;
-            cursor: pointer;
-        }
-
-        .index-two-r00:nth-child(2n+1) {
-            clear: both;
-        }
-
-        .index-two-r01 {
-            background-image:url('https://res.bestcake.com/images/new-index/index-two-01.png?v=1');
-            background-size: cover;
-        }
-
-        .index-two-r01:hover {
-            background-image:url('https://res.bestcake.com/images/new-index/index-two-01-1.png');
-        }
-
-        .index-two-r02 {
-            background-image:url('https://res.bestcake.com/images/new-index/index-two-02.png');
-            background-size: cover;
-        }
-
-        .index-two-r02:hover {
-            background-image:url('https://res.bestcake.com/images/new-index/index-two-02-1.png');
-        }
-
-        .index-two-r03 {
-            background-image:url('https://res.bestcake.com/images/new-index/index-two-03.png?v=1');
-            background-size: cover;
-        }
-
-        .index-two-r03:hover {
-            background-image:url('https://res.bestcake.com/images/new-index/index-two-03-1.png?v=1');
-        }
-
-        .index-two-r04 {
-            background-image:url('https://res.bestcake.com/images/new-index/index-two-04.png');
-            background-size: cover;
-        }
-
-        .index-two-r04:hover {
-            background-image:url('https://res.bestcake.com/images/new-index/index-two-04-1.png');
-        }
-
-        /*第三部分*/
-        .index-three {
-            margin-top: 42px;
-        }
-
-        .index-three:after, .index-three-title:after, .index-three-cake-tab:after, .index-three-tc:after {
-            content: '';
-            display: block;
-            clear: both;
-        }
-
-        .index-three-title-1 {
-            float: left;
-        }
-
-        .index-five-img {
-            width: 259px;
-            height: 609px;
-            transition: all .2s linear;
-            position: relative;
-        }
-
-        .index-five-img:hover {
-            -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            -webkit-transform: translate3d(0, -2px, 0);
-            transform: translate3d(0, -2px, 0);
+        .personal-first {
+            overflow: auto;
             background: #fff;
+            border: 1px solid #fff;
+            margin: -1px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .index-three-title-2 {
+        .personal-first .personal-first-a {
             float: left;
-            font-size: 25px;
-            color: #1db0b8;
-            line-height: 25px;
+            width: 225px;
+            height: 138px;
+            border: 1px solid #f0f0f0;
+            margin-right: 23.5px;
+        }
+
+        .personal-first .personal-first-b {
+            float: left;
+            width: 227px;
+            height: 138px;
+            border: 1px solid #f0f0f0;
+            margin-right: 23.5px;
+        }
+
+        .personal-first .personal-first-c {
+            float: left;
+            width: 428px;
+            height: 138px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .personal-first .personal-first-a .personal-first-a1 {
+            clear: both;
+            overflow: auto;
+            margin: 23px 41px 9px;
+        }
+
+        .personal-first .personal-first-a .personal-first-a2 {
+            clear: both;
+            overflow: auto;
+            margin: 0px 67px 0px 64px;
+        }
+
+        .personal-first .personal-first-a .personal-first-a3 {
+            clear: both;
+            margin: 0 40px 8px;
+        }
+
+        .personal-first .personal-first-a .personal-first-a4 {
+            clear: both;
+            overflow: auto;
+        }
+
+        .personal-first .personal-first-a .personal-first-a1 .personal-first-a-one {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 15px;
+            font-weight: bolder;
+            color: #000;
+        }
+
+        .personal-first .personal-first-a .personal-first-a1 .personal-first-a-two {
+            float: left;
+            text-indent: -999999px;
+            width: 15px;
+            height: 20px;
+            margin-left: 8px;
+        }
+
+        .personal-first .personal-first-a .personal-first-a2 .personal-first-a-one {
+            font-family: 微软雅黑;
+            font-size: 12px;
+            font-weight: bolder;
+            color: #aaa;
+            background: url(https://res.bestcake.com/images-2/user-main/material.png?v=113) 80px;
+            background-repeat: no-repeat;
+        }
+
+        .front-lv0 {
+            background: url(https://res.bestcake.com/images-2/user-main/front-lv0.png?v=113) 0px 3px;
+            background-repeat: no-repeat;
+        }
+
+        .front-lv1 {
+            background: url(https://res.bestcake.com/images-2/user-main/front-lv1.png?v=113) 0px 3px;
+            background-repeat: no-repeat;
+        }
+
+        .front-lv2 {
+            background: url(https://res.bestcake.com/images-2/user-main/front-lv2.png?v=113) 0px 3px;
+            background-repeat: no-repeat;
+        }
+
+        .front-lv3 {
+            background: url(https://res.bestcake.com/images-2/user-main/front-lv3.png?v=113) 0px 3px;
+            background-repeat: no-repeat;
+        }
+
+        .front-lv4 {
+            background: url(https://res.bestcake.com/images-2/user-main/front-lv4.png?v=113) 0px 3px;
+            background-repeat: no-repeat;
+        }
+
+        .front-lv5 {
+            background: url(https://res.bestcake.com/images-2/user-main/front-lv5.png?v=113) 0px 3px;
+            background-repeat: no-repeat;
+        }
+
+        .personal-first .personal-first-a .personal-first-a3 .personal-first-exp-bg {
+            background: #e1e4e9;
+            height: 4px;
+            width: 147px;
+            border-radius: 5px;
+        }
+
+        .personal-first .personal-first-a .personal-first-a3 .personal-first-exp {
+            background: #01d5d8;
+            color: white;
+            font-size: 12px;
+            height: 4px;
+            border-radius: 5px;
+        }
+
+        .personal-first .personal-first-a .personal-first-a4 .personal-first-a-one {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 22px;
+            font-weight: bolder;
+            color: #000;
+            margin-left: 30px;
+            text-align: right;
+            width: 87px;
+        }
+
+        .personal-first .personal-first-a .personal-first-a4 .personal-first-a-two {
+            float: right;
+            font-family: 微软雅黑;
+            font-size: 13px;
+            font-weight: bolder;
+            color: #000;
+            height: 29px;
+            line-height: 29px;
+            margin-right: 60px;
+        }
+
+        .personal-first .personal-first-b .personal-first-b1 {
+            clear: both;
+            overflow: auto;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .personal-first .personal-first-b .personal-first-b2 {
+            clear: both;
+            overflow: hidden;
+            margin-bottom: 13px;
+        }
+
+        .personal-first .personal-first-b .personal-first-b3 {
+            clear: both;
+        }
+
+        .personal-first .personal-first-b .personal-first-b1 .personal-first-b-one {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 15px;
+            font-weight: bolder;
+            color: #000;
+            text-align: center;
+            width: 227px;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .personal-first .personal-first-b .personal-first-b2 .personal-first-b-one {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 22px;
+            font-weight: bolder;
+            color: #000;
+            height: 29px;
+            width: 55px;
+            text-align: right;
+        }
+
+        .personal-first .personal-first-b .personal-first-b2 .personal-first-b-two {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 13px;
+            font-weight: bolder;
+            color: #000;
+            height: 29px;
+            line-height: 33px;
             margin-left: 8px;
             margin-right: 8px;
         }
 
-        .index-three-title-3 {
+        .personal-first .personal-first-b .personal-first-b2 .personal-first-b-three {
             float: left;
-            font-size: 15px;
-            color: #333;
-            line-height: 15px;
-            margin-top: 10px;
-        }
-
-        .index-three-cake-list {
-            margin-top: 16px;
-        }
-
-        .index-three-cake-tab {
-            width: 292px;
-            height: 246px;
-            float: left;
-            margin-right: 10px;
-            position: relative;
-            background: #fafafa;
-            cursor:pointer;
-        }
-
-        .index-three-cake-tab:last-child {
-            margin-right: 0;
-        }
-
-        .index-three-cake-tab:hover {
-            -moz-box-shadow: 0px 0px 20px #efefef;
-            -webkit-box-shadow: 0px 0px 20px #efefef;
-            box-shadow: 0px 0px 20px #efefef;
-            background: #fff;
-        }
-
-        .index-three-cake-img {
-            height: 173px;
-        }
-
-        .index-three-cake-img img {
-            width: 292px;
-            height: 173px;
-        }
-
-        .index-three-cake-name {
-            font-size: 14px;
-            color: #2a2a2a;
-            text-align: center;
-            height: 35px;
-            line-height: 40px;
-        }
-
-        .index-three-cake-price {
-            text-align: center;
-            font-size: 0;
-        }
-
-        .index-three-icon {
-            position: absolute;
-            top: 0;
-            left: 10px;
-        }
-
-        .index-three-tc {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 292px;
-            height: 73px;
-            background: #fafafa;
-        }
-
-        .index-three-cake-tab.select {
-            background: #fff;
-        }
-
-        .index-three-tc {
-        }
-
-        .index-three-tc .index-three-l {
-            float: left;
-            width: 105px;
-            height: 24px;
-            border: 1px solid #26cad3;
-            color: #26cad3;
-            font-size: 14px;
-            text-align: center;
-            line-height: 24px;
-            margin: 21px 28px 0 25px;
-            cursor: pointer;
-        }
-
-        .index-three-tc .index-three-r {
-            float: left;
-            width: 105px;
-            height: 24px;
-            border: 1px solid #26cad3;
-            background: #26cad3;
+            font-family: 微软雅黑;
+            font-size: 12px;
+            font-weight: bolder;
+            color: #000;
+            height: 20px;
+            line-height: 20px;
             color: #fff;
-            font-size: 14px;
+            background: url(https://res.bestcake.com/images-2/user-main/qiandao.png?v=113) 10px #01d5d8;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            padding-left: 28px;
+            padding-right: 9px;
+            margin: 6px;
+        }
+
+        .personal-first .personal-first-b .personal-first-b3 .personal-first-b-one {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 15px;
+            font-weight: bolder;
+            color: #000;
             text-align: center;
-            line-height: 24px;
-            margin-top: 21px;
-            cursor: pointer;
+            width: 227px;
+            height: 20px;
+            line-height: 20px;
         }
 
-        /*第四部分*/
-        .index-four {
-            height: 128px;
-            padding-top: 26px;
+
+
+        .personal-first .personal-first-c .personal-first-c1 {
+            clear: both;
+            overflow: auto;
+            margin-top: 24px;
+            margin-bottom: 12px;
         }
 
-        /*第五部分*/
-        .index-five {
-            margin-top: 30px;
+        .personal-first .personal-first-c .personal-first-c2 {
+            clear: both;
+            overflow: auto;
+            margin-bottom: 18px;
         }
 
-        .index-five:after, .index-five-list:after, .index-five-list-r:after {
-            content: '';
-            display: block;
+        .personal-first .personal-first-c .personal-first-c3 {
             clear: both;
         }
 
-        .index-five-title {
-        }
-
-        .index-five-title-l {
+        .personal-first .personal-first-c .personal-first-c1 .personal-first-c-one {
             float: left;
-            font-size: 24px;
-            color: #26cad3;
-            margin-bottom: 30px;
+            font-family: 微软雅黑;
+            font-size: 13px;
+            font-weight: bolder;
+            color: #000;
+            margin-left: 61px;
+            height: 20px;
+            line-height: 20px;
         }
 
-        .index-five-title-r {
-            float: right;
-            position: relative;
-            margin-right: 30px;
-            cursor: pointer;
-            margin-top: 10px;
+        .personal-first .personal-first-c .personal-first-c2 .personal-first-c-one {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 13px;
+            font-weight: bolder;
+            color: #000;
+            margin-left: 61px;
+            width: 120px;
+            height: 29px;
+            line-height: 29px;
         }
 
-        .index-five-title-r:after {
-            display: block;
-            content: '';
-            position: absolute;
-            right: -26px;
-            top: 0px;
-            width: 22px;
-            height: 22px;
-            background: url(https://res.bestcake.com/images/new-index/ndex-five-title-r.png?v=1) no-repeat center center;
-            background-size: 22px 22px;
-            cursor: pointer;
+        .personal-first .personal-first-c .personal-first-c2 .personal-first-c-two {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 22px;
+            font-weight: bolder;
+            color: #000;
+            margin-left: 46px;
+            height: 29px;
+            line-height: 29px;
         }
 
-        .index-five-list {
+        .personal-first .personal-first-c .personal-first-c3 .personal-first-c-one {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 13px;
+            font-weight: bolder;
+            color: #000;
+            margin-left: 61px;
+            width: 123px;
+        }
+
+        .personal-first .personal-first-c .personal-first-c3 .personal-first-c-two {
+            float: left;
+            font-family: 微软雅黑;
+            font-size: 13px;
+            font-weight: bolder;
+            color: #000;
+            margin-left: 46px;
+        }
+
+        .orderlist-tab {
             clear: both;
         }
 
-        .index-five-tab:hover, .seven_one_two:hover, .eight_one_one:hover {
-            -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            -webkit-transform: translate3d(0, -2px, 0);
-            transform: translate3d(0, -2px, 0);
-            background: #fff;
+        .orderlist-sidebar-tab {
+            margin: 0 35px;
+            padding: 41px 0;
+            height: 74px;
         }
 
-        .index-five-list-l {
-            width: 258px;
-            height: 626px;
+        .orderlist-title-1 {
             float: left;
-            margin-right: 11px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 13px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            margin-left: 174px;
         }
 
-        .index-five-list-r {
-            position: relative;
+        .orderlist-title-2 {
             float: left;
+            height: 30px;
+            line-height: 30px;
+            font-size: 13px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            margin-left: 165px;
         }
 
-        .index-five-tab {
-            width: 300px;
-            height: 297px;
+        .orderlist-title-3 {
             float: left;
-            margin-left: 10px;
-            margin-top: 14px;
-            background: #fff;
-            -webkit-transition: all .2s linear;
-            transition: all .2s linear;
-            position: relative;
+            height: 30px;
+            line-height: 30px;
+            font-size: 13px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            margin-left: 97px;
         }
 
-        .index-five-tab:nth-child(3n+1) {
+        .orderlist-title-4 {
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            font-size: 13px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            margin-left: 90px;
+        }
+
+        .orderlist-title-5 {
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            font-size: 13px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            margin-left: 115px;
+        }
+
+
+
+        .orderlist-sidebar-tab .sidebar-b {
             clear: both;
-            margin-left: 0px;
+            float: left;
+            overflow: hidden;
+            width: 324px;
+            height: 74px;
         }
 
-        .index-five-tab:nth-child(1), .index-five-tab:nth-child(2), .index-five-tab:nth-child(3) {
+        .orderlist-sidebar-tab .sidebar-c {
+            float: left;
+            font-size: 0px;
+            height: 74px;
+            line-height: 74px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            width: 119px;
+            text-align: center;
+        }
+
+        .orderlist-sidebar-tab .sidebar-d {
+            float: left;
+            font-size: 13px;
+            height: 74px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            width: 163px;
+            text-align: center;
+        }
+
+        .orderlist-sidebar-tab .sidebar-e {
+            float: left;
+            font-size: 13px;
+            height: 74px;
+            line-height: 74px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            width: 155px;
+            text-align: center;
             margin-top: 0px;
         }
 
-        .index-five-tab-cake {
-            width: 300px;
-            height: 200px;
-        }
-
-        .index-five-tab-cake img {
-            width: 300px;
-            height: 200px;
+        .orderlist-sidebar-tab .sidebar-f {
+            float: left;
+            font-size: 13px;
+            height: 74px;
+            line-height: 74px;
+            color: #000;
+            font-family: 微软雅黑;
+            font-weight: bolder;
+            width: 80px;
             cursor: pointer;
-        }
-
-        .index-five-tab-name {
-            font-size: 16px;
             text-align: center;
-            line-height: 19px;
-            height: 19px;
         }
 
-        .index-five-tab-price {
-            text-align: center;
-            font-size: 0;
-            line-height: 19px;
-            height: 19px;
-            margin-top: 13px;
+        .orderlist-sidebar-tab .sidebar-b .sidebar-b-1 {
+            float: left;
+            margin-right: 5px;
         }
 
-        .index-five-tab-volume {
-            text-align: center;
-            font-size: 0;
-            line-height: 16px;
-            height: 16px;
-            margin-top: 14px;
+        .orderlist-sidebar-tab .sidebar-b .sidebar-b-1 img {
+            width: 108px;
+            height: 77px;
         }
 
-        .index-five-tab-car {
-            position: absolute;
-            bottom: 17px;
-            right: 20px;
-            cursor: pointer;
+        .orderlist-sidebar-tab .sidebar-b .sidebar-b-2 {
+            float: left;
+            margin-right: 5px;
         }
 
-
-        /**第七部分*/
-
-        .index-seven {
-            margin-top: 30px;
+        .orderlist-sidebar-tab .sidebar-b .sidebar-b-3 {
+            float: left;
+            margin-right: 5px;
         }
 
-        .seven_one {
-            height: 300px;
-            width: 1200px;
-            clear: both;
+        .orderlist-sidebar-tab .sidebar-c .sidebar-c-1 {
+            font-size: 12px;
+            vertical-align: top;
+            line-height: 71px;
+        }
+
+        .orderlist-sidebar-tab .daifukuan-red {
+            color: #f1485f;
+        }
+
+        .orderlist-sidebar-tab .sidebar-d .sidebar-d-1 {
+            margin-left: 0px;
+            font-size: 13px;
+            color: #aaa;
+            font-family: 微软雅黑;
+            margin-bottom: 9px;
             margin-top: 15px;
         }
 
-        .index-seven-list {
-            clear: both;
+        .orderlist-sidebar-tab .sidebar-d .sidebar-d-2 {
+            margin-left: 8px;
+            font-size: 13px;
+            color: #aaa;
+            font-family: 微软雅黑;
         }
 
-        .seven_one:first-child {
-            margin-top: 0;
+        .personal-third {
+            border-top: 1px solid #f0f0f0;
         }
 
-        .seven_one_one {
-            width: 300px;
-            height: 300px;
+        .effective {
+            overflow: auto;
+            margin-top: 39px;
+            margin-bottom: 80px;
+        }
+
+        .effective .coupon-sidebar-tab {
+            background: url(https://res.bestcake.com/images-2/user-main/effective.png?v=113);
+            background-repeat: no-repeat;
+            width: 195px;
+            height: 211px;
+        }
+
+        .coupon-sidebar {
+            margin-top: 33px;
+            margin-left: 35px;
+        }
+
+        .coupon-sidebar-tab {
             float: left;
-            margin-left: 10px;
-            background: #fff;
-            position: relative;
-            overflow: hidden;
-            transition: all .2s linear;
         }
 
-        .seven_one_one:hover {
-            -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            -webkit-transform: translate3d(0, -2px, 0);
-            transform: translate3d(0, -2px, 0);
-            background: #fff;
+        .wuyouhui-tab {
+            margin: 151px 432px 151px 397px;
         }
 
-        .seven_one_two {
-            -webkit-transition: all .2s linear;
-            transition: all .2s linear;
+
+        .coupon-sidebar-tab:nth-child(1) {
+            margin-right: 28px;
+            margin-bottom: 34px;
+            margin-left: 35px;
         }
 
-        .seven_one_one:first-child {
-            width: 260px;
-            margin-left: 0;
+        .coupon-sidebar-tab:nth-child(2) {
+            margin-right: 28px;
+            margin-bottom: 34px;
         }
 
-        .seven_one_one img {
-            width: 300px;
-            height: 200px;
-            cursor: pointer;
+        .coupon-sidebar-tab:nth-child(3) {
+            margin-right: 28px;
+            margin-right: 35px;
+            margin-bottom: 34px;
         }
 
-        .seven_info {
-            text-align: center;
-            line-height: 30px;
-            margin-top: 4px;
-            width: 300px;
+        .coupon-sidebar-tab:nth-child(4) {
+            margin-right: 1px;
         }
 
-        .name {
-            font-size: 16px;
-            color: #333;
+        .coupon-sidebar-tab:nth-child(5) {
+            margin-right: 28px;
         }
 
-        .money {
-            color: #fc4315;
-            font-size: 16px;
-            line-height: 19px;
-            height: 19px;
-            margin-top: 2px;
+        .coupon-sidebar-tab:nth-child(6) {
+            margin-right: 28px;
+            margin-right: 35px;
         }
 
-        .xiaoliang {
-            color: #ababab;
-            font-size: 14px;
+        .coupon-sidebar-tab:nth-child(7) {
+            margin-right: 28px;
         }
 
-        .shop {
-            background-image: url('https://res.bestcake.com/images/new-index/index-five-tab-car.png?v=1');
-            background-size: cover;
-            position: absolute;
-            right: 22px;
-            bottom: 17px;
-            width: 22px;
-            height: 23px;
-            cursor: pointer;
+        .coupon-sidebar-tab:nth-child(8) {
+            margin-right: 1px;
         }
 
-        .shop_car {
-            padding: 0px 28px;
-            position: absolute;
-            bottom: 0;
-            width: 300px;
-            height: 130px;
-            background: #fafafa;
-        }
-
-        .shop_car_money {
-            font-size: 16px;
-            line-height: 22px;
-            margin-top: 10px;
-        }
-
-        .shop_car_num {
-            margin: 12px auto;
-            float: left;
-            width: 58px;
-            height: 27px;
-            border: 1px solid #ccc;
-            margin-left: 2px;
-            position: relative;
-            cursor: pointer;
-            color: #666;
-            text-align: center;
-            line-height: 27px;
-            border-radius: 2px;
-        }
-
-        .shop_car_num div:first-child {
-            margin-left: 0px;
-        }
-
-        .shop_car_num_yes {
-            position: absolute;
-            left: 0;
-            top: 0;
-            max-width: 11px;
-            max-height: 11px;
-            display: none;
-        }
-
-        .shop_car_join {
-            display: inline-block;
-        }
-
-        .shop_car_join div {
-            width: 105px;
-            height: 25px;
-            line-height: 26px;
-            float: left;
-            color: #26cad3;
-            background: #fff;
-            border: 1px solid #26cad3;
-            cursor: pointer;
-            text-align: center;
-            border-radius: 2px;
-        }
-
-        .shop_car_join div:last-child {
-            margin-left: 29px;
-            background: #26cad3;
+        .coupon-sidebar-tab .sidebar-a {
+            width: 186px;
+            height: 36px;
+            font-family: 微软雅黑;
+            font-size: 36px;
+            font-weight: bolder;
+            line-height: 36px;
             color: #fff;
+            text-align: center;
+            margin-top: 25px;
         }
 
-        .borde {
-            border: 1px solid #26cad3;
+        .coupon-sidebar-tab .sidebar-a span {
+            font-size: 17px;
+            color: #fff;
+            line-height: 27px;
+            vertical-align: bottom;
+            margin-left: 5px;
         }
 
-        .displ {
-            display: block;
-        }
-        /**第九部分*/
-        .index-nine {
-            margin-top: 30px;
-        }
-
-        .eight_one_one {
-            width: 290px;
-            height: 300px;
-            float: left;
-            margin-left: 13px;
-            background: #fff;
-            position: relative;
-            overflow: hidden;
-            -webkit-transition: all .2s linear;
-            transition: all .2s linear;
+        .coupon-sidebar-tab .sidebar-b {
+            width: 186px;
+            height: 20px;
+            font-family: 微软雅黑;
+            font-size: 15px;
+            color: #fff;
+            text-align: center;
+            margin-top: 8px;
         }
 
-        .eight_one_one:first-child {
-            margin-left: 0;
-        }
-        /**第十部分*/
-        .index-ten {
-            margin-top: 30px;
-            margin-bottom: 60px;
-        }
-        /*banner*/
-        .home-top-banner {
-            width: 100%;
-            display: none;
+        .coupon-sidebar-tab .sidebar-b1 {
+            width: 186px;
+            height: 16px;
+            font-family: 微软雅黑;
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
         }
 
-        .home-top-banner1 {
-            position: relative;
+        .coupon-sidebar-tab .sidebar-c {
+            width: 186px;
+            height: 16px;
+            font-family: 微软雅黑;
+            font-size: 12px;
+            color: #ffcecd;
+            text-align: center;
+            margin-top: 4px;
         }
 
-        .home-top-big-banner1 img {
-            width: 100%;
-        }
-
-        .home-top-big-banner1 {
-            position: relative;
-            height: 100%;
-            transition: height 0.35s;
-        }
-
-        .banner-big-button {
-            position: absolute;
-            top: 0px;
-            right: 0px;
+        .coupon-sidebar-tab .sidebar-d {
+            width: 115px;
+            height: 28px;
+            border: 2px solid #ff4848;
+            border-radius: 5px;
+            text-align: center;
+            color: #ff4848;
+            font-size: 14px;
+            font-family: 微软雅黑;
+            font-weight: bolder;
             cursor: pointer;
-            width: 70px;
-            height: 34px;
+            margin: 11px 42px 0 36px;
+            line-height: 28px;
         }
 
-        .banner-small-button {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            cursor: pointer;
-            width: 70px;
-            height: 34px;
-        }
-        /*.home-top-small-banner{position:relative;height:100%;}
-            .home-top-small-banner img{width: 100%; }
-            .banner-small-button{ position:absolute; bottom:20px; right:20px; cursor:pointer;}*/
-
-        .bannermove {
-            opacity: 1;
+        .sidebar-e {
+            width: 186px;
+            height: 16px;
+            font-family: 微软雅黑;
+            font-size: 13px;
+            color: #ff4c48;
+            text-align: center;
+            margin-top: 18px;
         }
 
-        .big-banner-img {
+        .sidebar-a span.sidebar-a-1 {
+            font-size: 37px;
+            height: 50px;
+            line-height: 50px;
         }
 
-        .small-banner-img {
-            display: none;
-        }
-
-        .big-banner-img img {
-            width: 100%;
-        }
-
-        .small-banner-img img {
-            width: 100%;
-        }
-
-        .eight_one_one img {
-            width: 300px;
-            height: 200px;
-            cursor: pointer;
-        }
-
-        .index-one-left-cake img {
-            width: 63px;
-            height: 42px;
-        }
-
-        .index-three-title-img {
-            width: 1200px;
-            height: 130px;
-        }
-
-        .cursor {
-            cursor: pointer;
+        .sidebar-a span.sidebar-a-2 {
+            height: 50px;
+            line-height: 50px;
         }
     </style>
-
 </head>
 <body>
+
 <!--顶部栏-->
 <script src="/pub/common.min.js?v=20180417" type="text/javascript"></script>
 <script src="/pub/sha1.js?v=20180122" type="text/javascript"></script>
@@ -1967,436 +1816,530 @@
     var closeYxactions = true;
 </script>
 
-<div class="mainbox ch_body">
-    <!--第一部分 sec1 sec2-->
-    <div class="main index-one">
-        <div class="index-one-left">
-            <div class="index-one-left-1">
-                <!--ko foreach:menuList1-->
-                <!--ko if:$data.MenuLocation==='Section1'-->
-                <div class="index-one-left-name" data-bind="click:function(){$root.menuChoose($data)},attr:{id:$data.MenuLocation+'menulocation-'+$index()}">
-                    <img class="icon new-index-icon" data-bind="attr:{src:'https://res.bestcake.com'+$data.MenuIcon}">
-                    <span data-bind="text:$data.MenuName"></span>
+<div class="member-center-main">
+    <div class="member-center-content">
+        <div class="member-center">
+            <div class="member-center-main-left">
+                <!--菜单列表-->
+                <!--当前列表加class select-li-->
+                <style>
+                    .user-nav-ul li {
+                        margin-bottom: 20px;
+                        padding-left: 19px;
+                    }
 
-                    <!--左侧-->
-                    <div class="index-one-left-tc" data-bind="attr:{id:$data.MenuLocation+'tc-'+$index()}">
-                        <!--左侧蛋糕列表-->
-                        <!--ko foreach:$data.MenuProduct-->
-                        <div class="index-one-left-cake" data-bind="click:function(){$root.jumpHref($data.ProductHref)}">
-                            <img data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl}">
-                            <div style="color: #000;" data-bind="text:$data.Name"></div>
-                        </div>
-                        <!--/ko-->
-                        <!--ko if:$data.MenuLocation==='Section1' && $data.MenuName ==='蛋糕匠心原创'-->
-                        <div style="position: absolute; bottom: 10px; right: 10px; z-index: 11111; color: #000; font-size: 16px;">
-                            注：匠心原创为原经典系列蛋糕
-                        </div>
-                        <!--/ko-->
-                    </div>
+                    .user-nav-title {
+                        font-family: 微软雅黑;
+                        font-size: 14px;
+                        color: #000;
+                        font-weight: bolder;
+                        background: url(https://res.bestcake.com/images-2/user-main/li_dot.png?v=113);
+                        background-repeat: no-repeat;
+                    }
+
+                    .animenu-user-label {
+                        font-family: 微软雅黑;
+                        font-size: 12px;
+                        color: #aaa;
+                        font-weight: bolder;
+                    }
+
+                    .select-li {
+                        color: #01d5d8;
+                    }
+                </style>
+                <!--个人中心菜单-->
+                <div class="user-nav-border-r">
+                    <!--菜单列表-->
+                    <ul class="user-nav-ul">
+                        <li class="user-nav-border user-nav-title">我的交易</li>
+                        <li>
+                            <a href="user-order.html?show=1">
+                                <div class="animenu-user-order">
+                                    <div id="m-1" class="animenu-user-order animenu-user-label">我的订单</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="user-nav-border user-nav-title">我的资产</li>
+                        <li>
+                            <a href="user-account.html?show=2">
+                                <div class="animenu-user-account">
+                                    <div id="m-2" class="animenu-user-account animenu-user-label">账户余额</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="user-point.html?show=3">
+                                <div class="animenu-user-point">
+                                    <div id="m-3" class="animenu-user-point animenu-user-label">我的经验值</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="user-coupon.html?show=4">
+                                <div class="animenu-user-coupon">
+                                    <div id="m-4" class="animenu-user-coupon animenu-user-label">我的优惠券</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="user-duihuan.html?show=5">
+                                <div class="animenu-user-duihuan">
+                                    <div id="m-5" class="animenu-user-duihuan animenu-user-label">我的兑换券</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="user-nav-border user-nav-title">我的资料</li>
+                        <li>
+                            <a href="user-info.html?show=6">
+                                <div class="animenu-user-info">
+                                    <div id="m-6" class="animenu-user-info animenu-user-label">个人资料</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="user-phone.html?show=7">
+                                <div class="animenu-user-phone">
+                                    <div id="m-7" class="animenu-user-phone animenu-user-label">绑定手机号</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="user-address.html?show=8">
+                                <div class="animenu-user-address">
+                                    <div id="m-8" class="animenu-user-address animenu-user-label">收货地址</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="user-password.html?show=9">
+                                <div class="animenu-user-password">
+                                    <div id="m-9" class="animenu-user-password animenu-user-label">修改密码</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <!--/ko-->
-                <!--/ko-->
+
+                <script type="text/javascript">
+                    $(function () {
+                        $("#m-" + getParam("show") + "").addClass("select-li");
+                    });
+
+                    function getParam(name) {
+                        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                        var r = window.location.search.substr(1).match(reg);
+                        if (r != null) return unescape(r[2]); return null;
+                    }
+                </script>
+
             </div>
-            <div class="index-one-left-line">&nbsp;</div>
-            <div class="index-one-left-2">
-                <!--ko foreach:menuList2-->
-                <div class="index-one-left-name" data-bind="click:function(){$root.menuChoose($data)},attr:{id:$data.MenuLocation+'menulocation-'+$index()}">
-                    <img class="icon new-index-icon" data-bind="attr:{src:'https://res.bestcake.com'+$data.MenuIcon}">
-                    <span data-bind="text:$data.MenuName"></span>
-                    <!--左侧-->
-                    <div class="index-one-left-tc" data-bind="attr:{id:$data.MenuLocation+'tc1-'+$index()}">
-                        <!--左侧蛋糕列表-->
-                        <!--ko foreach:$data.MenuProduct-->
-                        <div class="index-one-left-cake" data-bind="click:function(){$root.jumpHref($data.ProductHref)}">
-                            <img data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl}">
-                            <div style="color: #000;" data-bind="text:$data.Name"></div>
+            <div class="member-center-main-right">
+                <div class="personal-first">
+                    <div class="personal-first-a">
+                        <div class="personal-first-a1">
+                            <div class="personal-first-a-one" data-bind="text:Top.user.phone"></div>
+                            <div class="personal-first-a-two" data-bind="css: 'front-lv' + Top.user.level()"></div>
                         </div>
-                        <!--/ko-->
-                    </div>
-                </div>
-                <!--/ko-->
-
-            </div>
-        </div>
-        <div class="index-one-right">
-            <!--头部-->
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                </div>
-                <!-- 如果需要分页器 -->
-                <div class="swiper-pagination" style="right: 41px;"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </div>
-
-    <!--第二部分 sec3-->
-    <div class="main index-two">
-        <div class="index-two-r1">
-            <div class="index-two-r0">
-                <div class="index-two-r00 index-two-r01" data-bind="click:function(){$root.jumpHref('/qyzq/taste')}">&nbsp;</div>
-                <div class="index-two-r00 index-two-r02" data-bind="click:function(){$root.jumpHref('/qydh/to')}">&nbsp;</div>
-                <div class="index-two-r00 index-two-r03" data-bind="click:function(){$root.jumpHref('/qyzq/hz-list-all')}">&nbsp;</div>
-                <div class="index-two-r00 index-two-r04" data-bind="click:function(){$root.jumpHref('/qyzq/hz-card-swhzdh?v=xgjswhzdhbslh5ym')}">&nbsp;</div>
-            </div>
-            <img src="https://res.bestcake.com/images/new-index/r0.png?v=2" style="width: 229px; height: 167px;">
-        </div>
-        <!--ko foreach:menuList1-->
-        <!--ko if:$data.MenuLocation==='Section3'-->
-        <div class="index-two-r" data-bind="click:function(){$root.jumpHref($data.MenuHref)}">
-            <img data-bind="attr:{src:'https://res.bestcake.com'+$data.MenuIcon}" width="310">
-        </div>
-        <!--/ko-->
-        <!--/ko-->
-    </div>
-
-
-    <!--第三部分 蛋糕 限时购-->
-    <div class="main index-three" style="display: none">
-        <!--ko foreach:section4List-->
-        <div class="index-three-title">
-            <img class="index-three-title-1" data-bind="attr:{src:'https://res.bestcake.com'+$data.MenuIcon}">
-            <div class="index-three-title-2" data-bind="text:MenuName"></div>
-            <div class="index-three-title-3" data-bind="text:MenuStyle"></div>
-        </div>
-
-        <div class="index-three-cake-list">
-            <!--ko foreach:$data.MenuProduct-->
-            <div class="index-three-cake-tab" data-bind="attr:{id:'section4-'+$index()}">
-                <div class="index-three-cake-img" data-bind="click:function(){$root.jumpHref($data.ProductHref)}">
-                    <img class="index-three-cake" data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl}">
-                </div>
-                <div class="index-three-cake-name">
-                    <span data-bind="text:$data.Name"></span>
-                    <span data-bind="text:$data.Size"></span>
-                </div>
-                <div class="index-three-cake-price">
-                    <span style="color: #ff3300; font-size: 14px;">￥</span>
-                    <span style="color: #ff3300; font-size: 16px;" data-bind="text:($data.CostPrice||$data.Price)"></span>
-                    <span style="color: #ff3300; font-size: 14px;">.00</span>
-                    <span style="color: #adadad; font-size: 16px; text-decoration: line-through; margin-left: 5px;" data-bind="text:'￥'+$data.Price,visible:$data.CostPrice>0"></span>
-                </div>
-                <div class="index-three-icon">
-                    <img class="index-three-icon" data-bind="visible:$data.CostPrice>0,attr:{src:'https://res.bestcake.com'+($data.IconUrl||'/images/defaultimg.png')}">
-                </div>
-                <div class="index-three-tc" data-bind="attr:{id:'section4tc-'+$index()}" style="display: none;">
-                    <div class="index-three-l" data-bind="click:function(){$root.buy($data,'cart')}">加入购物车</div>
-                    <div class="index-three-r" data-bind="click:function(){$root.buy($data,'buy')}">立即购买</div>
-                </div>
-            </div>
-            <!--/ko-->
-        </div>
-        <!--/ko-->
-    </div>
-
-
-    <div style="background: #f5f5f5; padding-bottom: 20px; margin-top: 26px;">
-        <!--第四部分 活动页banner-->
-        <!--ko if:banner.top1banner().length>0-->
-        <!--ko foreach:banner.top1banner-->
-        <div class="main index-four cursor" data-bind="click:function(){$root.jumpHref($data.LinkUrl)}">
-            <img class="index-three-title-img" data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl}">
-        </div>
-        <!--/ko-->
-        <!--/ko-->
-
-        <!--第五部分 贝式·严选-->
-        <div class="main index-five">
-            <!--ko foreach:section5List-->
-            <div class="index-five-title">
-                <div class="index-five-title-l" data-bind="text:$data.MenuName"></div>
-                <div class="index-five-title-r" data-bind="click:function(){$root.jumpHref($data.MenuHref)}">查看更多</div>
-            </div>
-            <div class="index-five-list">
-                <a href="/ksk/item/mlmq-1392">
-                    <div class="index-five-list-l">
-                        <img class="index-five-img" data-bind="attr:{src:'https://res.bestcake.com'+$data.MenuIcon}">
-                    </div>
-                </a>
-                <div class="index-five-list-r">
-                    <!--ko foreach:$data.MenuProduct-->
-                    <div class="index-five-tab">
-                        <div class="index-five-tab-cake" data-bind="click:function(){$root.jumpHref($data.ProductHref)}">
-                            <img class="index-three-cake" data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl}">
+                        <div class="personal-first-a2">
+                            <a data-bind="attr:{href:'user-info.html?show=6'}">
+                                <div class="personal-first-a-one">编辑个人资料</div>
+                            </a>
                         </div>
-                        <div class="index-five-tab-name">
-                            <span style="color: #000; font-size: 16px;" data-bind="text:$data.Name"></span>
-                        </div>
-                        <div class="index-five-tab-price">
-                            <span style="color: #ff3300; font-size: 17px;">￥</span>
-                            <span style="color: #ff3300; font-size: 22px;" data-bind="text:($data.CostPrice||$data.Price).toFixed(2)"></span>
-                        </div>
-                        <div class="index-five-tab-volume">
-                                <span style="color: #a8a8a8; font-size: 15px;">销量
-                                    <abbr data-bind="text:$data.SaleCount || 0"></abbr>
-                                </span>
-                        </div>
-                        <div class="index-five-tab-car" data-bind="click:function(){$root.openCart($data)}">
-                            <img class="index-three-title-car" src="https://res.bestcake.com/images/new-index/index-five-tab-car.png?v=1" width="22" height="22">
-                        </div>
-                        <div class="index-five-tab-tc" style="width: 300px;" data-bind="visible:$data.ShowSizeList">
-                            <div class="index-five-tab-tc1">
-                                <span style="color: #313131; font-size: 16px; margin-left: 28px;">￥</span>
-                                <span style="color: #313131; font-size: 16px;" data-bind="text:$data.ChoosePrice().toFixed(2)"></span>
-                                <span style="color: #313131; font-size: 16px;">/</span>
-                                <span style="color: #878787; font-size: 16px;" data-bind="text:$data.ChooseSize"></span>
+                        <div class="personal-first-a3">
+                            <div class="current-bfb">
+                                <div class="current-percent" data-bind="style: { marginLeft: widths() + '%' }, text: widths() + '%'"></div>
                             </div>
-                            <div class="index-five-tab-tc3">
-                                <div class="shop-car-list" data-bind="foreach:$data.SizeList">
-                                    <div class="shop_car_num" data-bind="click:function(){$root.ChooseSize($parent,$data)},css:$parent.ChooseSize() === $data?'borde':''">
-                                        <num data-bind="text:$data"></num>
-                                        <img src="https://res.bestcake.com/images/new-index/seven_7.png?v=1" alt="选择" class="shop_car_num_yes displ" data-bind="visible:$parent.ChooseSize() === $data" />
-                                    </div>
+                            <div class="personal-first-exp-bg" align="left">
+                                <div class="personal-first-exp" data-bind="style:{width:widths()+'%'}">
                                 </div>
                             </div>
-                            <div class="index-five-tab-tc3">
-                                <div class="index-five-l" data-bind="click:function(){$root.buy($data,'cart')}">加入购物车</div>
-                                <div class="index-five-r" data-bind="click:function(){$root.buy($data,'buy')}">立即购买</div>
+                        </div>
+                        <div class="personal-first-a4">
+                            <div class="personal-first-a-one" data-bind="text:toThousands(Top.user.coin())"></div>
+                            <div class="personal-first-a-two">吉致币</div>
+                        </div>
+                    </div>
+                    <div class="personal-first-b">
+                        <div class="personal-first-b1">
+                            <div class="personal-first-b-one">您已连续签到</div>
+                        </div>
+                        <div class="personal-first-b2">
+                            <div class="personal-first-b-one" data-bind="text:signIn.cDay">0</div>
+                            <div class="personal-first-b-two">天</div>
+                            <div class="personal-first-b-three" data-bind="click:signIn.clickSignIn,text:signIn.currentPrompt">签到!</div>
+                        </div>
+                        <div class="personal-first-b3">
+                            <div class="personal-first-b-one">
+                                <label data-bind="text:signIn.currentPrompt()=='签到!'?0:1"></label>
+                                <!--<label data-bind="text:userData.memberScore"></label>-->
+                                点 经验
+
+                                <abbr style="color: #FF0000; position: absolute; display: none;" id="move__">+1</abbr>
                             </div>
                         </div>
                     </div>
-                    <!--/ko-->
+                    <div class="personal-first-c">
+                        <div class="personal-first-c1">
+                            <div class="personal-first-c-one">今天是,</div>
+                        </div>
+                        <div class="personal-first-c2">
+                            <div class="personal-first-c-one" data-bind="text:today.yyyy()+'年'+today.MM()+'月'+today.dd()+'日'">
+                            </div>
+                            <div class="personal-first-c-two" data-bind="text:dateArgs.xingzuo()"></div>
+                        </div>
+                        <div class="personal-first-c3">
+                            <div class="personal-first-c-one" data-bind="text:dateArgs.nongli()"></div>
+                            <div class="personal-first-c-two" data-bind="text:'距离'+dateArgs.fes.fesName()+'还有'+dateArgs.fes.intDay()+'天'"></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!--/ko-->
-        </div>
-
-        <!--第六部分 活动页banner-->
-        <!--ko if:banner.top2banner().length>0-->
-        <!--ko foreach:banner.top2banner-->
-        <div class="main index-four cursor" data-bind="click:function(){$root.jumpHref($data.LinkUrl)}" style="margin-top: 0; padding-top: 10px;">
-            <img class="index-three-title-img" data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl}">
-        </div>
-        <!--/ko-->
-        <!--/ko-->
-        <!--第七部分 匠心·原创-->
-        <div class="main index-seven">
-            <!--ko foreach:section6List-->
-            <!--ko if:$data.MenuLocation=='Section6'-->
-            <div class="index-five-title">
-                <div class="index-five-title-l" data-bind="text:$data.MenuName"></div>
-                <div class="index-five-title-r" data-bind="click:function(){$root.jumpHref($data.MenuHref)}">查看更多</div>
-            </div>
-            <div class="index-seven-list">
-                <div class="seven_one">
-                    <!--ko foreach:$data.MenuProduct-->
-                    <!--ko if:$index()==0-->
-                    <div class="seven_one_one" data-bind="click:function(){$root.jumpHref($data.ProductHref)}">
-                        <img data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl}" style="width: 260px; height: 300px;" />
+                <div class="personal-secend">
+                    <div class="main-right-title">
+                        <div class="title-line">&nbsp;</div>
+                        <div class="title-name">我的订单</div>
                     </div>
-                    <!--/ko-->
-                    <!--/ko-->
-
-                    <!--ko foreach:$data.MenuProduct-->
-                    <!--ko if:$index()>0 && $index()<4-->
-                    <div class="seven_one_one seven_one_two">
-                        <img class="index-three-cake" data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl},click:function(){$root.jumpHref($data.ProductHref)}">
-                        <div class="seven_info">
-                            <span style="color: #000; font-size: 16px;" data-bind="text:$data.Name"></span>
-                            <div style="max-height: 30px;">
-                                <span style="color: #ff3300; font-size: 17px;">￥</span>
-                                <span style="color: #ff3300; font-size: 22px;" data-bind="text:($data.CostPrice||$data.Price).toFixed(2)"></span>
-                            </div>
-                            <span style="color: #a8a8a8; font-size: 15px;">销量
-                                    <abbr data-bind="text:$data.SaleCount || 0"></abbr>
-                                </span>
-                        </div>
-                        <div class="shop" data-bind="click:function(){$root.openCart($data)}"></div>
-                        <div class="shop_car" data-bind="visible:$data.ShowSizeList">
-                            <p class="shop_car_money"><span style="color: #333;" data-bind="text:'￥'+$data.ChoosePrice().toFixed(2)"></span>/ <span class="chose_num" data-bind="text:$data.ChooseSize"></span></p>
-                            <div data-bind="foreach:$data.SizeList">
-                                <div class="shop_car_num" data-bind="click:function(){$root.ChooseSize($parent,$data)},css:$parent.ChooseSize() === $data?'borde':''">
-                                    <num data-bind="text:$data"></num>
-                                    <img src="https://res.bestcake.com/images/new-index/seven_7.png?v=1" alt="选择" class="shop_car_num_yes displ" data-bind="visible:$parent.ChooseSize() === $data" />
+                    <div data-bind="visible:loaded(),foreach:orders.currentList">
+                        <div class="orderlist-sidebar-tab">
+                            <div class="sidebar-b">
+                                <!--ko foreach: $data.ListCake-->
+                                <!--ko if:$index()<=1 -->
+                                <div class="sidebar-b-1">
+                                    <img src="" data-bind="attr:{src:'https://res.bestcake.com/images/ksk/item/'+ProductName+'.jpg?v=20190128',alt:ProductName}">
                                 </div>
-                            </div>
-
-                            <div class="shop_car_join">
-                                <div data-bind="click:function(){$root.buy($data,'cart')}">加入购物车</div>
-                                <div data-bind="click:function(){$root.buy($data,'buy')}">立即购买</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/ko-->
-                    <!--/ko-->
-                </div>
-                <div class="seven_one">
-                    <!--ko foreach:$data.MenuProduct-->
-                    <!--ko if:$index()==4-->
-                    <div class="seven_one_one" data-bind="click:function(){$root.jumpHref($data.ProductHref)}">
-                        <img data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl}" style="width: 260px; height: 300px;" />
-                    </div>
-                    <!--/ko-->
-                    <!--/ko-->
-
-                    <!--ko foreach:$data.MenuProduct-->
-                    <!--ko if:$index()>4 -->
-                    <div class="seven_one_one seven_one_two">
-                        <img data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl},click:function(){$root.jumpHref($data.ProductHref)}">
-                        <div class="seven_info">
-                            <span style="color: #000; font-size: 16px;" data-bind="text:$data.Name"></span>
-                            <div style="max-height: 30px;">
-                                <span style="color: #ff3300; font-size: 17px;">￥</span>
-                                <span style="color: #ff3300; font-size: 22px;" data-bind="text:($data.CostPrice||$data.Price).toFixed(2)"></span>
-                            </div>
-                            <span style="color: #a8a8a8; font-size: 15px;">销量
-                                    <abbr data-bind="text:$data.SaleCount || 0"></abbr>
-                                </span>
-                        </div>
-                        <div class="shop" data-bind="click:function(){$root.openCart($data)}"></div>
-                        <div class="shop_car" data-bind="visible:$data.ShowSizeList">
-                            <p class="shop_car_money"><span style="color: #333;" data-bind="text:'￥'+$data.ChoosePrice().toFixed(2)"></span>/ <span class="chose_num" data-bind="text:$data.ChooseSize"></span></p>
-                            <div data-bind="foreach:$data.SizeList">
-                                <div class="shop_car_num" data-bind="click:function(){$root.ChooseSize($parent,$data)},css:$parent.ChooseSize() === $data?'borde':''">
-                                    <num data-bind="text:$data"></num>
-                                    <img src="https://res.bestcake.com/images/new-index/seven_7.png?v=1" alt="选择" class="shop_car_num_yes displ" data-bind="visible:$parent.ChooseSize() === $data" />
+                                <!--/ko-->
+                                <!--/ko-->
+                                <!-- ko if:$data.ListCake.length>2 -->
+                                <div class="sidebar-b-3">
+                                    <img src="https://res.bestcake.com/images-2/user-main/still-more.png?v=113">
                                 </div>
+                                <!--/ko-->
                             </div>
-
-                            <div class="shop_car_join">
-                                <div data-bind="click:function(){$root.buy($data,'cart')}">加入购物车</div>
-                                <div data-bind="click:function(){$root.buy($data,'buy')}">立即购买</div>
+                            <div class="sidebar-c">
+                                <label style="font-size: 16px;" data-bind="text:$data.TotalPrice ? $data.TotalPrice.toString().split('.')[0] : 0"></label>
+                                <span class="sidebar-c-1" data-bind="text:$data.TotalPrice ? '.'+$data.TotalPrice.toString().split('.')[1] : '.'+00"></span>
+                            </div>
+                            <div class="sidebar-d">
+                                <div class="sidebar-d-1" data-bind="text:$data.OrderTimeDD"></div>
+                                <div class="sidebar-d-2" data-bind="text:$data.OrderTimeHH"></div>
+                            </div>
+                            <div class="sidebar-e daifukuan-red" data-bind="css:{'daifukuan-red':$data.PayStatus=='未支付' && $data.OrderStatus=='未处理' && ($data.PayMent==null||$data.PayMent=='支付宝'||$data.PayMent=='交通银行'||$data.PayMent=='微信支付'||$data.PayMent=='极致币'||$data.PayMent=='一城卡'||$data.PayMent=='招商银行'||$data.PayMent=='通联支付')},text:$data.OrderStatus=='拒收'||$data.OrderStatus=='已作废'?'已取消':$data.AutoCancel==1?'已取消':($data.PayMent=='支付宝'||$data.PayMent=='交通银行'||$data.PayMent=='微信支付'||$data.PayMent=='极致币'||$data.PayMent=='一城卡'||$data.PayMent=='招商银行'||$data.PayMent=='通联支付')&& $data.PayStatus=='未支付'?'待付款':$data.OrderStatus=='未处理'&& PayStatus=='已支付'?'已支付':PayMent==null||PayMent ==''?'待付款':(PayMent=='货到付款'||PayMent=='货到付款(POS机)')&& $data.OrderStatus=='未处理'?'已处理':$data.OrderStatus=='已退款'?'已取消':$data.OrderStatus"></div>
+                            <!--<div class="sidebar-e " data-bind="text:$data.OrderStatus,css:{'daifukuan-red':$data.OrderStatus=='未处理'}"></div>-->
+                            <div class="sidebar-f">
+                                <a href="" style="color: #000;" data-bind="attr:{href:'user-order-show/'+OrderId}" target="_blank">查看</a>
                             </div>
                         </div>
                     </div>
-                    <!--/ko-->
-                    <!--/ko-->
-                </div>
-
-            </div>
-
-            <!--/ko-->
-            <!--/ko-->
-        </div>
-
-        <!--第八部分 活动页banner-->
-        <!--ko if:banner.top3banner().length>0-->
-        <!--ko foreach:banner.top3banner-->
-        <div class="main index-four cursor" data-bind="click:function(){$root.jumpHref($data.LinkUrl)}">
-            <img class="index-three-title-img" data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl}">
-        </div>
-        <!--/ko-->
-        <!--/ko-->
-        <!--第九部分 网红爆款-->
-        <div class="main index-nine">
-            <!--ko foreach:section6List-->
-            <!--ko if:$data.MenuLocation=='Section7'-->
-            <div class="index-five-title">
-                <div class="index-five-title-l" data-bind="text:$data.MenuName"></div>
-                <!--<div class="index-five-title-r">查看更多</div>-->
-            </div>
-            <div class="seven_one">
-                <!--ko foreach:$data.MenuProduct-->
-                <div class="eight_one_one">
-                    <img data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl},click:function(){$root.jumpHref($data.ProductHref)}">
-                    <div class="seven_info">
-                        <span style="color: #000; font-size: 16px;" data-bind="text:$data.Name"></span>
-                        <div style="max-height: 30px;">
-                            <span style="color: #ff3300; font-size: 17px;">￥</span>
-                            <span style="color: #ff3300; font-size: 22px;" data-bind="text:($data.CostPrice||$data.Price).toFixed(2)"></span>
-                        </div>
-                        <span style="color: #a8a8a8; font-size: 15px;">销量
-                                <abbr data-bind="text:$data.SaleCount || 0"></abbr>
-                            </span>
-                    </div>
-                    <div class="shop" data-bind="click:function(){$root.openCart($data)}"></div>
-                    <div class="shop_car" data-bind="visible:$data.ShowSizeList">
-                        <p class="shop_car_money"><span style="color: #333;" data-bind="text:'￥'+$data.ChoosePrice().toFixed(2)"></span>/ <span class="chose_num" data-bind="text:$data.ChooseSize"></span></p>
-                        <div data-bind="foreach:$data.SizeList">
-                            <div class="shop_car_num" data-bind="click:function(){$root.ChooseSize($parent,$data)},css:$parent.ChooseSize() === $data?'borde':''">
-                                <num data-bind="text:$data"></num>
-                                <img src="https://res.bestcake.com/images/new-index/seven_7.png?v=1" alt="选择" class="shop_car_num_yes displ" data-bind="visible:$parent.ChooseSize() === $data" />
-                            </div>
-                        </div>
-
-                        <div class="shop_car_join">
-                            <div data-bind="click:function(){$root.buy($data,'cart')}">加入购物车</div>
-                            <div data-bind="click:function(){$root.buy($data,'buy')}">立即购买</div>
-                        </div>
+                    <div style="text-align: center; display: none; margin:151px 0;" data-bind="visible:orders.currentList().length<=0">
+                        <img width="52" height="69" src="https://res.bestcake.com/images-2/user-main/no-dingdan.png?v=114">
                     </div>
                 </div>
-                <!--/ko-->
-            </div>
-            <!--/ko-->
-            <!--/ko-->
-        </div>
-
-        <!--第十部分 猜您喜欢-->
-        <div class="main index-ten">
-            <!--ko foreach:section6List-->
-            <!--ko if:$data.MenuLocation=='Section8'-->
-            <div class="index-five-title">
-                <div class="index-five-title-l" data-bind="text:$data.MenuName"></div>
-                <!--<div class="index-five-title-r">查看更多</div>-->
-            </div>
-            <div class="seven_one">
-                <!--ko foreach:$data.MenuProduct-->
-                <div class="eight_one_one">
-                    <img data-bind="attr:{src:'https://res.bestcake.com'+$data.ImgUrl},click:function(){$root.jumpHref($data.ProductHref)}">
-                    <div class="seven_info">
-                        <span style="color: #000; font-size: 16px;" data-bind="text:$data.Name"></span>
-                        <div style="max-height: 30px;">
-                            <span style="color: #ff3300; font-size: 17px;">￥</span>
-                            <span style="color: #ff3300; font-size: 22px;" data-bind="text:($data.CostPrice||$data.Price).toFixed(2)"></span>
-                        </div>
-                        <span style="color: #a8a8a8; font-size: 15px;">销量
-                                <abbr data-bind="text:$data.SaleCount || 0"></abbr>
-                            </span>
+                <div class="personal-third">
+                    <div class="main-right-title">
+                        <div class="title-line">&nbsp;</div>
+                        <div class="title-name">我的优惠券</div>
                     </div>
-                    <div class="shop" data-bind="click:function(){$root.openCart($data)}"></div>
-                    <div class="shop_car" data-bind="visible:$data.ShowSizeList">
-                        <p class="shop_car_money"><span style="color: #333;" data-bind="text:'￥'+$data.ChoosePrice().toFixed(2)"></span>/ <span class="chose_num" data-bind="text:$data.ChooseSize"></span></p>
-                        <div data-bind="foreach:$data.SizeList">
-                            <div class="shop_car_num" data-bind="click:function(){$root.ChooseSize($parent,$data)},css:$parent.ChooseSize() === $data?'borde':''">
-                                <num data-bind="text:$data"></num>
-                                <img src="https://res.bestcake.com/images/new-index/seven_7.png?v=1" alt="选择" class="shop_car_num_yes displ" data-bind="visible:$parent.ChooseSize() === $data" />
+                    <div class="effective" style="display: none" data-bind="visible:coupons2().length>0,foreach:coupons2">
+                        <div class="coupon-sidebar-tab">
+                            <div class="sidebar-a">
+                                <span class="sidebar-a-1" data-bind="text:$data.Price"></span>
+                                <span class="sidebar-a-2">元</span>
                             </div>
+                            <div class="sidebar-b" data-bind="text:$data.ModelName"></div>
+                            <div class="sidebar-b1" data-bind="text:$data.UseType"></div>
+                            <div class="sidebar-c" data-bind="text:$data.ExpireTimeStr"></div>
+                            <div class="sidebar-e">
+                                <span data-bind="text:$data.KeyCode"></span>
+                            </div>
+                            <div class="sidebar-d" data-bind="click:function () { $root.touse($data.href); }">前往使用</div>
                         </div>
-
-                        <div class="shop_car_join">
-                            <div data-bind="click:function(){$root.buy($data,'cart')}">加入购物车</div>
-                            <div data-bind="click:function(){$root.buy($data,'buy')}">立即购买</div>
-                        </div>
+                    </div>
+                    <div style="text-align: center; display: none; margin:101px 0;" data-bind="visible:coupons2().length<=0">
+                        <img width="71" height="88" src="https://res.bestcake.com/images-2/user-main/wuyouhui.png?v=113" />
                     </div>
                 </div>
-                <!--/ko-->
             </div>
-
-            <!--/ko-->
-            <!--/ko-->
         </div>
-
     </div>
 </div>
-</body>
 
 
-<script type="text/javascript" src="/../../jslib/jquery.fly.min.js" defer="defer"></script>
-<script type="text/javascript" src="/../../pub/active.js?v=20170823" defer="defer"></script>
-<script src="/pub/login-min.js?v=20160927" type="text/javascript"></script>
-<script src="https://res.bestcake.com/js/swiper.min.js"></script>
-<script type="text/javascript" src="/../../js/index.7.0.js?v=20190221"></script>
+<script src="/js/userCenter.2.0.js?v=20170719" type="text/javascript"></script>
+<script src="/js/commonJs.js?v=1" type="text/javascript"></script>
+<script src="/js/nongli.js" type="text/javascript"></script>
+<script type="text/javascript">
+    (function () {
+        var p = {
+            obj: $("#move__"),
+            top: $("#move__").css("top").substring(0, $("#move__").css("top").length - 2),
+            move: function () {
+                p.top = parseInt(p.top) + 1;
+                p.obj.css({ "top": p.top + "px" });
+            },
+            none: function () { this.obj.fadeOut(); },
+            ini: function (num) {
+                if (this.top >= 0) return;
+                var s = setInterval(function () {
+                    p.obj.text("+" + num);
+                    p.obj.show();
+                    p.move();
+                    if (p.top >= 0) { clearInterval(s); }
+                }, 30);
+                setTimeout(function () { p.none(); }, 2000);
+            }
+        };
+        var viewModel = {
+            loaded: ko.observable(false),
+            toThousands: function toThousands(num) {
+                var num = (num || 0).toString(), result = '';
+                if (num.split('.').length > 0 && num.split('.')[0].length > 4)
+                    result = (num / 1e4).toFixed(2) + '万';
+                else
+                    result = num;
+                return result;
+            },
+            today: {
+                yyyy: ko.observable(""),
+                MM: ko.observable(""),
+                dd: ko.observable(""),
+                HH: ko.observable(""),
+                mm: ko.observable("")
+            },
+            signIn: {
+                //promptArry: ["已签到!", "每日签到得经验~", "您已经签到过了~"],
+                promptArry: ["已签到!", "签到!"],
+                currentPrompt: ko.observable(""),
+                cDay: ko.observable(0),
+                addScore: 0,
+                allowSignIn: ko.observable(false),
+                clickSignIn: function () {
+                    page.post({ m: "userSignIn", c: "UserMain" }, function (data) {
+                        if (data.Status == 'ok') {
+                            //new Over.tip({text:'签到成功',close:true});
+                            var data = data.Tag;
+                            var addscore = data.score;
+                            //p.ini(addscore);
+                            viewModel.userData.memberScoreAdd(addscore);
+                            viewModel.signIn.cDay(data.cday);
+                            viewModel.signIn.currentPrompt("已签到!");
+                            viewModel.signIn.allowSignIn(false);
+                            //page.vm.userLevel.userExpCurrent(viewModel.userData.memberScore());
+                        } else {
+                            viewModel.signIn.currentPrompt("已签到!");
+                        }
+                    });
+                }
+            },
+            userData: {
+                memberScore: ko.observable(0),
+                memberScoreAdd: function (num) { this.memberScore(parseInt(this.memberScore()) + parseInt(num)); },
+                timeDescribe: ["早上好，一束阳光照在身，祝你天天都开心。", "亲，别打瞌睡了哦，来杯下午茶吧。", "宁静的夜晚,送上我温馨的祝福。"],
+                userScore: ko.observable(0),
+                currentDescribe: ko.observable(""),
+                userName: ko.observable(""),
+                describeFun: function () { var date = new Date(), p = "", mm = date.getHours(); if (mm >= 6 && mm <= 11) { p = this.timeDescribe[0]; } else if (mm >= 12 && mm <= 18) { p = this.timeDescribe[1]; } else { p = this.timeDescribe[2]; } this.currentDescribe(p); }
+            },
+            dateArgs: {
+                nongli: ko.observable(""),
+                xingzuo: ko.observable(""),
+                fes: {
+                    fesName: ko.observable(""),
+                    intDay: ko.observable("")
+                }
+            },
+            orders: {
+                allOrder: ko.observableArray([]),
+                noPayOrder: ko.observableArray([]),
+                currentList: ko.observableArray([]),
+                orderShow: ko.observable(true),
+                noPayCount: ko.observable(""),
+                noPayCss: ko.observable(false),
+                noPayPattern: function () {
+                    viewModel.orders.currentList(viewModel.orders.noPayOrder());//当前订单为未付款订单
+                    this.orders.noPayCss(true);
+                },
+                allPattern: function () {
+                    viewModel.orders.currentList(viewModel.orders.allOrder());//当前订单为全部订单
+                    this.orders.noPayCss(false);
+                }
+            },
+            coupons: {
+                couponShow: ko.observable(true),
+                noUseCount: ko.observable("0"),
+                expireTime: ko.observable(""),
+                expireTime: ko.observable(""),
+                state: ko.observable(""),
+                price: ko.observable(""),
+                userdType: ko.observable(""),
+                keyCode: ko.observable(""),//优惠券码 add by jy
+                city: ko.observable(""),//使用城市 add by jy
+                ChannelType: ko.observable(""),//使用渠道 add by jy
+            },
+            coupons2: ko.observableArray(),
+            touse: function (url) {
+                window.location.href = url;
+            },
+            prices: ko.observable(0),
 
-<script>
+            widths: function () {
+                var width = parseInt(((Top.user.exp() / Top.user.expNext() * 100) > 0 && (Top.user.exp() / Top.user.expNext() * 100) < 1) ? 1 : parseInt(Top.user.exp() / Top.user.expNext() * 100));
+                if (Top.user.level() == "5") {
+                    width = 100;
+                }
+                return width;
+            }
+        };
+        page.bind(viewModel);
+        page.get({ m: "today", c: "UserMain" }, function (data) {
+            if (data.Status == 'ok') {
+                var obj = data.Tag;
+                viewModel.today.yyyy(obj.yyyy);
+                viewModel.today.MM(obj.MM);
+                viewModel.today.dd(obj.dd);
+                viewModel.today.HH(obj.HH);
+                viewModel.today.mm(obj.mm);
+            }
+            viewModel.userData.describeFun();//设置问候语
+            var yyyy = viewModel.today.yyyy(), MM = viewModel.today.MM(), dd = viewModel.today.dd();
+            viewModel.dateArgs.xingzuo(commmon.xingzuo.current({ "yyyy": yyyy, "MM": MM, "dd": dd }));//设置星座
+            viewModel.dateArgs.nongli(GetLunarDay(viewModel.today.yyyy(), viewModel.today.MM(), viewModel.today.dd()));//设置农历
+            var fes = commmon.festival.getFestivalByDate({ "yyyy": yyyy, "MM": MM, "dd": dd });
+            viewModel.dateArgs.fes.fesName(fes.fesName);
+            viewModel.dateArgs.fes.intDay(fes.intDay);
+        });
+        page.get({ m: "getSignInfo", c: "UserMain" }, function (data) {
+            if (data.Status == 'ok') {
+                var data = data.Tag;
+                viewModel.signIn.cDay(data.cday);//设置连续签到天数
+                viewModel.signIn.allowSignIn(data.allowSignIn == "1" ? true : false);//设置签到按钮颜色
+                viewModel.signIn.currentPrompt(data.allowSignIn == "1" ? viewModel.signIn.promptArry[1] : viewModel.signIn.promptArry[0]);//设置签到提示语
+                viewModel.userData.memberScore(data.memberScore);//设置经验
+                viewModel.userData.userName(data.userName);
+            }
+        });
+        page.get({ m: "userMainGetOrders", c: "UserMain" }, function (data) {
+            if (data.Status == 'ok') {
+                var res = data.Tag.allOrders;
+                if (res.length > 0) {
+                    for (var i = 0; i < res.length; i++) {
+                        if (res[i].TotalPrice) {
+                            res[i].TotalPrice = (res[i].TotalPrice > 0 ? parseFloat(res[i].TotalPrice) : 0).toFixed(2);
+                        }
+                        if (res[i].AutoCancel == 1) {
+                            res[i].OrderStatus = "已取消";
+                        }
+                    }
+                }
+                viewModel.orders.allOrder(res);
+                //viewModel.orders.noPayOrder(data.Tag.noPayOrders);
+                viewModel.orders.noPayCount(data.Tag.noPayOrdersCount);//未付款订单个数
+                viewModel.orders.currentList(viewModel.orders.allOrder());//当前订单为全部订单
+                //console.log(viewModel.orders.currentList());
 
-    $(document).ready(function () {
+            } else {
+                viewModel.orders.orderShow(false);
+            }
+            viewModel.loaded(true);
+        });
+        //page.get({ m: "GetPagedItemsNew", c: "Coupons", v: new Date().getTime() }, function (data) {
+        //    if (data.Status == 'ok') {
+        //        var arr = data.Tag.DataList;
+        //        if (arr.length > 0) {
+        //            var __sum = 0, newArr = [];
+        //            arr.map(function (item) {
+        //                item.IsExpires = new Date(page.JsonDateToDateTimeString(item.ExpireTime)) <= new Date();
+        //                if (item.State === 1 && !item.IsExpires) {
+        //                    __sum += 1;
+        //                    newArr.push(item);
+        //                }
+        //            })
+        //            if (newArr.length > 0) {
+        //                if (newArr[0].Sign == 1) {
+        //                    if (newArr[0].UserdType == "all") {
+        //                        newArr[0].ModelName = '全场正价优惠券';
+        //                    }
+        //                    else if (newArr[0].UserdType == "jzcake") {
+        //                        newArr[0].ModelName = '吉致系列优惠券';
+        //                    }
+        //                    else {
+        //                        newArr[0].ModelName = '经典系列优惠券';
+        //                    }
+        //                }
+        //                else {
+        //                    newArr[0].ModelName = newArr[0].ModelName;
+        //                }
+        //                viewModel.coupons.noUseCount(__sum);
+        //                viewModel.coupons.state(newArr[0].State == "0" ? "已使用" : "未使用");
+        //                var expireTime = newArr[0].ExpireTime ? page.JsonDateToDateTimeString(newArr[0].ExpireTime, "yyyy年MM月dd日") : "";
+        //                viewModel.coupons.expireTime(expireTime);
+        //                viewModel.coupons.userdType(newArr[0].ModelName);
+        //                viewModel.coupons.price(newArr[0].Price);
+        //                viewModel.coupons.keyCode(newArr[0].KeyCode);//add by jy
+        //                viewModel.coupons.city(newArr[0].City);//add by jy
+        //                var _channel;
+        //                if (newArr[0].Sign == 1) {
+        //                    _channel = !newArr[0].cpChannelType ? '通用' : newArr[0].cpChannelType.toString().replace(/1/, 'PC').replace(/2/, '微网').replace(/3/, 'IOS').replace(/4/, '安卓').replace(/5/, 'CallCenter');
+        //                }
+        //                else {
+        //                    _channel = !newArr[0].crChannelType ? '通用' : newArr[0].crChannelType.toString().replace(/1/, 'PC').replace(/2/, '微网').replace(/3/, 'IOS').replace(/4/, '安卓').replace(/5/, 'CallCenter');
+        //                }
+        //                viewModel.coupons.ChannelType(_channel);//add by jy
+        //            }
+        //        }
 
-        $('.shop').click(function () {
-            $('.shop_car').hide();
-            $(this).next().show();
-        })
-        $('.shop_car_num').click(function () {
-            $(this).addClass('borde').siblings().removeClass('borde');
-            $(this).children('img').addClass('displ');
-            $(this).siblings().children('img').removeClass('displ');
-            $(this).parent().prev().children('.chose_num').html($(this).children('num').html());
-        })
+        //    } else {
+        //        viewModel.coupons.couponShow(false);
+        //    }
+        //});
+        page.get({ c: "Coupons", m: "GetCouponList", Status: 1, PageIndex: 1, PageSize: 4 }, function (data) {
+            if (data.Status == 'ok') {
+                var arr = data.Tag.DataList;
+                for (var i = 0; i < arr.length; i++) {
+                    arr[i].ExpireTimeStr = arr[i].ExpireTime ? page.JsonDateToDateTimeString(arr[i].ExpireTime, "yyyy/MM/dd") : "";
+                    arr[i].ExpireTime = arr[i].ExpireTime ? page.JsonDateToDateTimeString(arr[i].ExpireTime, "yyyy-MM-dd hh:mm:ss") : "";
+                    arr[i].UsedTimeStr = arr[i].UsedTime ? page.JsonDateToDateTimeString(arr[i].UsedTime, "yyyy-MM-dd hh:mm:ss") : "";
+                    arr[i].CreateTime = arr[i].CreateTime ? page.JsonDateToDateTimeString(arr[i].CreateTime, "yyyy-MM-dd hh:mm:ss") : "";
+                    arr[i].UsedTime = arr[i].UsedTime ? page.JsonDateToDateTimeString(arr[i].UsedTime, "yyyy-MM-dd hh:mm:ss") : "";
+                    arr[i].StartTime = arr[i].StartTime ? page.JsonDateToDateTimeString(arr[i].StartTime, "yyyy-MM-dd hh:mm:ss") : "";
+                    arr[i].ImagePath = "/images/ksk/page/coupon/coupon_" + arr[i].Price + ".jpg";
+                    arr[i].showeTime = arr[i].ExpireTime ? page.JsonDateToDateTimeString(arr[i].ExpireTime, "yyyy/MM/dd") : "";
+                    if (arr[i].Sign == 1) {
+                        arr[i].ChannelType = !arr[i].cpChannelType ? '通用' : arr[i].cpChannelType.toString().replace(/1/, 'PC').replace(/2/, '微网').replace(/3/, 'IOS').replace(/4/, '安卓').replace(/5/, 'CallCenter');
 
-
-    });
-
+                        if (arr[i].UserdType == "all") {
+                            arr[i].ModelName = '全场正价优惠券';
+                            arr[i].UseType = '';
+                        }
+                        else if (arr[i].UserdType == "jzcake") {
+                            arr[i].ModelName = '吉致系列优惠券';
+                            arr[i].UseType = '（仅限吉致系列）';
+                        }
+                        else {
+                            arr[i].ModelName = '经典系列优惠券';
+                            arr[i].UseType = '（仅限经典系列）';
+                        }
+                    }
+                    else {
+                        arr[i].ChannelType = !arr[i].crChannelType ? '通用' : arr[i].crChannelType.toString().replace(/1/, 'PC').replace(/2/, '微网').replace(/3/, 'IOS').replace(/4/, '安卓').replace(/5/, 'CallCenter');
+                        arr[i].ModelName = arr[i].ModelName;
+                    }
+                    if (arr[i].UserdType == "jzcake") {
+                        arr[i].href = "/jz/index";
+                        //arr[i].href = "/df/2017xz";
+                    } else {
+                        arr[i].href = "/ksk/list";
+                    }
+                }
+                viewModel.coupons2(arr);
+            }
+            else {
+                viewModel.coupons2([]);
+                viewModel.coupons.couponShow(false);
+            }
+        });
+    })();
 </script>
+
 <style>
     .i-foot {height: 430px; width: 100%; clear:both;}
     .foot { width: 100%; background: url(https://res.bestcake.com/images-2/new-index/footer2.jpg) no-repeat center; height: 430px; color: #444444;}
@@ -2708,5 +2651,6 @@ _py.push(['e', '']);
 <noscript><img src="//stats.ipinyou.com/adv.gif?a=5fs..YVjavvRTpVmJMab0FSQMyP&e=" style="display:none;"/></noscript>
 <script type='text/javascript'> var yosem1teParas = { extendedTracking: false, pub: 17 }; yosem1teBkReq = { ri: 'f6IsFJg7tAY' }; </script>
 
+</body>
 </html>
-<!--release:2019-04-02 14:25:43-->
+<!--release:2019-04-02 14:24:08-->

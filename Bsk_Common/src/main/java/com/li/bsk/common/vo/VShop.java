@@ -1,5 +1,6 @@
 package com.li.bsk.common.vo;
 
+import com.li.bsk.entity.Goods;
 import com.li.bsk.entity.GoodsClassifyDetails;
 
 import java.math.BigDecimal;

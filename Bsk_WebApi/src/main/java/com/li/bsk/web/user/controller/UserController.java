@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
@@ -34,5 +35,22 @@ public class UserController {
         return ResultUtil.exec (false,"ERROR",user);
     }
 
+    @GetMapping("user/verify")
+    @ApiOperation (value = "验证手机号")
+    public ResultVo verify(String phone){
+        return restTemplate.getForObject ("http://liprovideruser/user/verify?phone=" + phone,ResultVo.class);
+    }
+
+    @PutMapping("user/backPassword")
+    @ApiOperation (value = "修改密码")
+    public ResultVo backPassword(User user){
+        try {
+            restTemplate.put ("http://liprovideruser/user/backPassword",user);
+            return ResultUtil.exec (true,"OK","修改成功");
+        } catch (RestClientException e) {
+            e.printStackTrace ();
+            return ResultUtil.exec (false,"ERROR","密码修改失败");
+        }
+    }
 
 }

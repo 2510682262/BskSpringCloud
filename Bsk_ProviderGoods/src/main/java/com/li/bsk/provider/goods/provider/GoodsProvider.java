@@ -1,9 +1,12 @@
 package com.li.bsk.provider.goods.provider;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.li.bsk.common.util.ResultUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.Goods;
+import com.li.bsk.entity.GoodsClassifyDetails;
 import com.li.bsk.entity.GoodsImg;
 import com.li.bsk.mapper.GoodsClassifyDetailsMapper;
 import com.li.bsk.mapper.GoodsImgMapper;
@@ -58,6 +61,7 @@ public class GoodsProvider implements GoodsService {
 
     @Override
     public List<Goods> selectByGoodsType(int type) {
+
         QueryWrapper<Goods> queryWrapper = new QueryWrapper<> ();
         queryWrapper.eq ("goods_type",type);
         return goodsMapper.selectList (queryWrapper);
@@ -68,6 +72,23 @@ public class GoodsProvider implements GoodsService {
         QueryWrapper<Goods> goodsQueryWrapper = new QueryWrapper<> ();
         goodsQueryWrapper.eq ("goods_genre",genre);
         return goodsMapper.selectList (goodsQueryWrapper);
+    }
+
+    @Override
+    public List<GoodsClassifyDetails> findGoodsId(int id) {
+        List<GoodsClassifyDetails> goodsClassifyDetails = goodsClassifyDetailsMapper.selectByGoodsId (id);
+        for (GoodsClassifyDetails g: goodsClassifyDetails) {
+            System.err.println (g.getDetailsName ());
+        }
+        return goodsClassifyDetails;
+    }
+
+    @Override
+    public IPage<Goods> selectByMenuId(int menuId, int page, int limit) {
+        QueryWrapper<Goods> eq = new QueryWrapper<Goods> ().eq ("goods_type", menuId).or ().eq ("goods_genre", menuId);
+        Page<Goods> goodsPage = new Page<> (page, limit);
+
+        return goodsMapper.selectPage (goodsPage,eq);
     }
 
 }

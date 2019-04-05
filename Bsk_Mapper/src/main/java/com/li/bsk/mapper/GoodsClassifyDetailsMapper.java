@@ -3,6 +3,8 @@ package com.li.bsk.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.li.bsk.entity.GoodsClassifyDetails;
 
+import java.util.List;
+
 /**
  * <p>
   *  Mapper 接口
@@ -13,5 +15,6 @@ import com.li.bsk.entity.GoodsClassifyDetails;
  */
 public interface GoodsClassifyDetailsMapper extends BaseMapper<GoodsClassifyDetails> {
 
-    GoodsClassifyDetails selectByGoodsId(int id);
+    List<GoodsClassifyDetails> selectByGoodsId(int id);
+
 }
