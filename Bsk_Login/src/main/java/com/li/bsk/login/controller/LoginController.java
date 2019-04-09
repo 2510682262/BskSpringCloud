@@ -8,6 +8,7 @@ import com.li.bsk.login.service.LoginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,7 +32,12 @@ public class LoginController {
     @PostMapping("userlogin.do")
     @ApiOperation (value = "登陆接口")
     public ResultVo login(String userPhone, String userPassword, HttpServletRequest request, HttpServletResponse response){
-        String token = IsTokenUtil.isToken (request);
+        String token = null;
+        try {
+            token = IsTokenUtil.isToken (request);
+        } catch (Exception e) {
+            e.printStackTrace ();
+        }
         ResultVo resultVo = null;
         if (token.length () > 0){
             resultVo = loginService.check (token);

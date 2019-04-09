@@ -1,7 +1,7 @@
 package com.li.bsk.mapper;
 
-import com.li.bsk.entity.Orderform;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.li.bsk.entity.Orderform;
 
 /**
  * <p>
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author li
- * @since 2019-03-25
+ * @since 2019-04-09
  */
 public interface OrderformMapper extends BaseMapper<Orderform> {
 

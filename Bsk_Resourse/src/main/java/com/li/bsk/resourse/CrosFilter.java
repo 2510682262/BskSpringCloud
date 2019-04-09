@@ -1,4 +1,4 @@
-package com.li.bsk.login.filter;
+package com.li.bsk.resourse;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -10,7 +10,7 @@ import java.io.IOException;
  *@Author feri
  *@Date Created in 2019/3/13 10:55
  */
-//@WebFilter("/*")
+/*@WebFilter("/*")*/
 public class CrosFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {

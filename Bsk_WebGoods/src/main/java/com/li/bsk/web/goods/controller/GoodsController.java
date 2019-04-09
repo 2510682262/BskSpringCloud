@@ -2,12 +2,14 @@ package com.li.bsk.web.goods.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.li.bsk.common.util.ResultUtil;
+import com.li.bsk.common.util.TokenUtil;
 import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.common.vo.VGoods;
 import com.li.bsk.common.vo.VShop;
 import com.li.bsk.entity.Goods;
 import com.li.bsk.entity.GoodsClassifyDetails;
 import com.li.bsk.entity.GoodsImg;
+import com.li.bsk.entity.Orderform;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javafx.scene.chart.ValueAxis;
@@ -102,4 +104,11 @@ public class GoodsController {
         List<Goods> goods = Arrays.asList (forObject);
         return ResultUtil.exec (goods != null,"OK",goods);
     }*/
+
+    @PostMapping("goods/addOrderform")
+    @ApiOperation (value = "添加订单")
+    public ResultVo addOrderform(Orderform orderform, String token){
+        orderform.setUserId (TokenUtil.parseToken (token));
+        return restTemplate.postForObject ("http://liprovidergoods/goods/addOrderform",orderform,ResultVo.class);
+    }
 }

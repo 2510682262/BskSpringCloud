@@ -1,15 +1,15 @@
 package com.li.bsk.entity;
 
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
 import java.io.Serializable;
 
 /**
@@ -18,7 +18,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author li
- * @since 2019-03-25
+ * @since 2019-04-09
  */
 @TableName("orderform")
 public class Orderform extends Model<Orderform> {
@@ -40,9 +40,13 @@ public class Orderform extends Model<Orderform> {
 	@TableField("order_price")
 	private BigDecimal orderPrice;
 	@TableField("order_delivetime")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date orderDelivetime;
 	@TableField("order_info")
 	private String orderInfo;
+	@TableField("user_id")
+	private Integer userId;
 
 
 	public Integer getOrderId() {
@@ -115,6 +119,14 @@ public class Orderform extends Model<Orderform> {
 
 	public void setOrderInfo(String orderInfo) {
 		this.orderInfo = orderInfo;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	@Override

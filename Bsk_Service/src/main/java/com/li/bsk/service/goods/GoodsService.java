@@ -5,6 +5,7 @@ import com.li.bsk.common.vo.ResultVo;
 import com.li.bsk.entity.Goods;
 import com.li.bsk.entity.GoodsClassifyDetails;
 import com.li.bsk.entity.GoodsImg;
+import com.li.bsk.entity.Orderform;
 
 import java.util.List;
 
@@ -27,6 +28,19 @@ public interface GoodsService {
     List<GoodsClassifyDetails> findGoodsId(int id);
 
     IPage<Goods> selectByMenuId(int menuId, int page, int limit);
+
+    IPage<Orderform> selectByGoodsIdInOrder(String token,int page,int limit);
+
+    ResultVo addOrderform(Orderform orderform);
+
+    int selectGoodsCount();
+
+//    int selectOrderCount();
+
+    //void updateOrderform(Orderform orderform);
+
+
+
 
 
 }

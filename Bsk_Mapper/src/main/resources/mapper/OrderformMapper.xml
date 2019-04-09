@@ -13,6 +13,7 @@
 		<result column="order_price" property="orderPrice" />
 		<result column="order_delivetime" property="orderDelivetime" />
 		<result column="order_info" property="orderInfo" />
+		<result column="user_id" property="userId" />
 	</resultMap>
 
 </mapper>
