@@ -11,10 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableEurekaClient
 @EnableSwagger2
 public class WebGoodsApplication {
-
     public static void main(String[] args) {
         SpringApplication.run (WebGoodsApplication.class,args);
     }
-
-
 }

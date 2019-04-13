@@ -1,6 +1,6 @@
-package com.li.bsk.login.config;
+package com.li.bsk.provider.goods.config;
 
-import com.li.bsk.login.filter.CrosFilter;
+import com.li.bsk.provider.goods.filter.CrosFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

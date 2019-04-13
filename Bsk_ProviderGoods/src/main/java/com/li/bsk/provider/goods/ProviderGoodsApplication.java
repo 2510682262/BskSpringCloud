@@ -11,7 +11,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableDiscoveryClient
 @MapperScan("com.li.bsk.mapper")
 public class ProviderGoodsApplication {
-
     public static void main(String[] args) {
         SpringApplication.run (ProviderGoodsApplication.class,args);
     }

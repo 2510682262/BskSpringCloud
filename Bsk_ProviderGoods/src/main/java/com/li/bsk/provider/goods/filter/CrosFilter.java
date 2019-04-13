@@ -1,4 +1,4 @@
-package com.li.bsk.login.filter;
+package com.li.bsk.provider.goods.filter;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;

@@ -1327,8 +1327,8 @@
                 data:$("form").serialize(),
                 success:function (data) {
                     if (data.code == 1){
-                        alert("登录成功")
-                        //window.location.href = "index.html";
+                        window.localStorage.setItem("token",data.data);
+                        window.location.href = "index.html";
                     } else {
                         alert("失败")
                     }

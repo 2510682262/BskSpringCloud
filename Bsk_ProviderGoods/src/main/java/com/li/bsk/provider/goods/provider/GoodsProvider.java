@@ -120,7 +120,7 @@ public class GoodsProvider implements GoodsService {
     }
 
     @Override
-    public int selectGoodsCount() {
+    public Integer selectGoodsCount() {
         return goodsMapper.selectCount (new QueryWrapper<Goods> ().isNotNull ("goods_id"));
     }
 

@@ -33,7 +33,7 @@ public interface GoodsService {
 
     ResultVo addOrderform(Orderform orderform);
 
-    int selectGoodsCount();
+    Integer selectGoodsCount();
 
 //    int selectOrderCount();
 

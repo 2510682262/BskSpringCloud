@@ -12,6 +12,7 @@ import com.li.bsk.entity.GoodsImg;
 import com.li.bsk.entity.Orderform;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 import javafx.scene.chart.ValueAxis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -110,5 +111,10 @@ public class GoodsController {
     public ResultVo addOrderform(Orderform orderform, String token){
         orderform.setUserId (TokenUtil.parseToken (token));
         return restTemplate.postForObject ("http://liprovidergoods/goods/addOrderform",orderform,ResultVo.class);
+    }
+
+    @GetMapping("goods/goodsCount")
+    public Integer goodsCount(){
+        return restTemplate.getForObject ("http://liprovidergoods/goods/goodsCount",int.class);
     }
 }
